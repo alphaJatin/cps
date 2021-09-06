@@ -1,11 +1,16 @@
+<?php include "../../config/db_con.php";
+$query = 'SELECT name FROM company';
+$result = $con->query($query);
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Slick Playground</title>
+    <title>Latest Recruitments</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./css/slick.css">
     <link rel="stylesheet" type="text/css" href="./css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <style type="text/css">
         html,
@@ -20,7 +25,7 @@
 
         .slider {
             width: 50%;
-            margin: 100px auto;
+            margin: 0 auto;
         }
 
         .slick-slide {
@@ -39,11 +44,6 @@
 
         .slick-slide {
             transition: all ease-in-out .3s;
-            opacity: .2;
-        }
-
-        .slick-active {
-            opacity: .5;
         }
 
         .slick-current {
@@ -56,20 +56,21 @@
     <?php include "../../Components/Header/Header.php" ?>
     <div class="container my-3">
         <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                Cras justo odio
-                <span class="badge badge-primary badge-pill">14</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                Dapibus ac facilisis in
-                <span class="badge badge-primary badge-pill">2</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                Morbi leo risus
-                <span class="badge badge-primary badge-pill">1</span>
-            </li>
+
+            <?php if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) { ?>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <?php echo $row['name'] ?>
+                        <span class="badge bg-primary">New</span>
+                    </li>
+            <?php }
+            } else $error = "Currently no company is recuritmenting";
+            ?>
+
+
         </ul>
-        <section class="regular slider">
+        <h1 class="text-center my-5 font-monospace text-dark fw-bold">OUR PARTNERS</h1>
+        <section class="regular slider mb-5">
             <div>
                 <img src="images/debut_infotech.png">
             </div>
@@ -151,6 +152,7 @@
             });
         });
     </script>
+    <script src="js/scroll.js"></script>
 </body>
 
 </html>
