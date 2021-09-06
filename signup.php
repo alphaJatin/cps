@@ -49,11 +49,6 @@
                     <p class="lead fw-normal mb-0 me-3">
                     <h1>Sign Up </h1>
                     </p>
-
-                  </div>
-
-                  <div class="divider d-flex align-items-center my-4">
-
                   </div>
 
                   <div class="form-outline mb-3">
@@ -85,7 +80,6 @@
 
                   <div class="text-center text-lg-start mt-4 pt-2">
                     <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-
                   </div>
 
                 </form>
