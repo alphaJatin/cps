@@ -43,7 +43,6 @@
 
       <div class="row">
         <div class="col-md-12">
-          =======
 
           <head>
             <!-- Required meta tags -->
@@ -146,7 +145,6 @@
                     </div>
 
                   </section>
-                  >>>>>>> a7cb4536349a2e6f57c82518f6997fb1e7325ac1
                 </div>
 
               </div>

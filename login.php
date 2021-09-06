@@ -19,24 +19,6 @@
       background: #eee;
     }
 
-<<<<<<< HEAD
-          <div class="d-flex justify-content-between align-items-center">
-            <!-- Checkbox -->
-            <div class="form-check mb-0">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-              <label class="form-check-label" for="form2Example3">
-                Remember me
-              </label>
-            </div>
-            <a href="recover.php" class="text-body">Forgot password?</a>
-          </div>
-
-          <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="button" class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="..\cps\signup.php"
-                class="link-danger">Register</a></p>
-=======
     .h-custom {
       height: calc(100% - 73px);
     }
@@ -105,7 +87,6 @@
                 </form>
               </div>
             </div>
->>>>>>> a7cb4536349a2e6f57c82518f6997fb1e7325ac1
           </div>
 
         </section>
