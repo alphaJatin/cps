@@ -13,17 +13,17 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-    <?php include "./Components/Header/Header.php" ?>
-=======
     <?php include 'Components/Header/Header.php' ?>
 <<<<<<< HEAD
     <?php include 'components/Carousel/Carousel.html' ?>
 
 =======
     <?php include 'Components/Footer/Footer.php' ?>
+<<<<<<< HEAD
 >>>>>>> 84450d52f54ab2e42748d58dc20a1ab282bba41c
 >>>>>>> 7ac684a4eb5c6e3239e5f7961a35f80bcce55ffc
+=======
+>>>>>>> 20338564c138d0ac8b81746518b350d4a1944dba
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
