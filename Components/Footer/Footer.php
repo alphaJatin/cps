@@ -42,11 +42,10 @@
                 <div class="col-lg-4 text-center col-xl-4 mx-auto mb-4">
                     <!-- Content -->
                     <h6 class="text-uppercase fw-bold mb-4">
-                        <i class="fas fa-gem me-3"></i>Company name
+                        <i class="fas fa-gem me-3"></i>MAIMT
                     </h6>
                     <p>
-                        Here you can use rows and columns to organize your footer content. Lorem ipsum
-                        dolor sit amet, consectetur adipisicing elit.
+                        Approved by AICTE, Affiliated to Kurukshetra University, Kurukshetra, ISO 9001:2008 Certified
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -76,16 +75,16 @@
                         Useful links
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">Pricing</a>
+                        <a href="#!" class="text-reset">AICTE</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Settings</a>
+                        <a href="#!" class="text-reset">KUK</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Orders</a>
+                        <a href="#!" class="text-reset">UGC</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Help</a>
+                        <a href="#!" class="text-reset">Open Source</a>
                     </p>
                 </div>
                 <!-- Grid column -->
