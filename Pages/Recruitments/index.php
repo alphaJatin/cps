@@ -1,158 +1,101 @@
-<?php include "../../config/db_con.php";
-$query = 'SELECT name FROM company';
-$result = $con->query($query);
-?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Latest Recruitments</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="./css/slick.css">
-    <link rel="stylesheet" type="text/css" href="./css/slick-theme.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>lightSlider Demo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/lightslider.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <style type="text/css">
-        html,
-        body {
+    <style>
+        * {
             margin: 0;
             padding: 0;
-        }
-
-        * {
             box-sizing: border-box;
         }
 
-        .slider {
-            width: 50%;
-            margin: 0 auto;
+        ul {
+            list-style: none outside none;
+            padding-left: 0;
+            margin: 0;
         }
 
-        .slick-slide {
-            margin: 0px 20px;
+        .demo .item {
+            margin-bottom: 60px;
         }
 
-        .slick-slide img {
+        .content-slider li {
+            text-align: center;
+            color: #FFF;
+        }
+
+        .content-slider h3 {
+            margin: 0;
+            padding: 70px 0;
+        }
+
+        .demo {
             width: 100%;
         }
-
-        .slick-prev:before,
-        .slick-next:before {
-            color: black;
-        }
-
-
-        .slick-slide {
-            transition: all ease-in-out .3s;
-        }
-
-        .slick-current {
-            opacity: 1;
-        }
     </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/lightslider.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#content-slider").lightSlider({
+                loop: true,
+                keyPress: true
+            });
+            $('#image-gallery').lightSlider({
+                gallery: true,
+                item: 1,
+                thumbItem: 9,
+                slideMargin: 0,
+                speed: 500,
+                auto: true,
+                loop: true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
     <?php include "../../Components/Header/Header.php" ?>
-    <div class="container my-3">
-        <ul class="list-group">
-
-            <?php if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) { ?>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <?php echo $row['name'] ?>
-                        <span class="badge bg-primary">New</span>
+    <div class="container-fluid">
+        <div class="demo">
+            <div class="item">
+                <ul id="content-slider" class="content-slider">
+                    <li>
+                        <img src="img/ashriya_infotech.png" alt="">
                     </li>
-            <?php }
-            } else $error = "Currently no company is recuritmenting";
-            ?>
-
-
-        </ul>
-        <h1 class="text-center my-5 font-monospace text-dark fw-bold">OUR PARTNERS</h1>
-        <section class="regular slider mb-5">
-            <div>
-                <img src="images/debut_infotech.png">
+                    <li>
+                        <img src="img/debut_infotech.png" alt="">
+                    </li>
+                    <li>
+                        <img src="img/tcs.png" alt="">
+                    </li>
+                    <li>
+                        <img src="img/debut_infotech.png" alt="">
+                    </li>
+                    <li>
+                        <img src="img/tcs.png" alt="">
+                    </li>
+                    <li>
+                        <img src="img/debut_infotech.png" alt="">
+                    </li>
+                    <li>
+                        <img src="img/tcs.png" alt="">
+                    </li>
+                    <li>
+                </ul>
             </div>
-            <div>
-                <img src="images/ashriya_infotech.png">
-            </div>
-            <div>
-                <img src="images/tcs.png">
-            </div>
-            <div>
-                <img src="images/wipro.png">
-            </div>
-            <div>
-                <img src="images/debut_infotech.png">
-            </div>
-            <div>
-                <img src="images/ashriya_infotech.png">
-            </div>
-        </section>
+        </div>
     </div>
-    <?php include '../../Components/Footer/Footer.php' ?>
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-    <script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-        $(document).on('ready', function() {
-            $(".vertical-center-4").slick({
-                dots: true,
-                vertical: true,
-                centerMode: true,
-                slidesToShow: 4,
-                slidesToScroll: 2
-            });
-            $(".vertical-center-3").slick({
-                dots: true,
-                vertical: true,
-                centerMode: true,
-                slidesToShow: 3,
-                slidesToScroll: 3
-            });
-            $(".vertical-center-2").slick({
-                dots: true,
-                vertical: true,
-                centerMode: true,
-                slidesToShow: 2,
-                slidesToScroll: 2
-            });
-            $(".vertical-center").slick({
-                dots: true,
-                vertical: true,
-                centerMode: true,
-            });
-            $(".vertical").slick({
-                dots: true,
-                vertical: true,
-                slidesToShow: 3,
-                slidesToScroll: 3
-            });
-            $(".regular").slick({
-                dots: true,
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3
-            });
-            $(".center").slick({
-                dots: true,
-                infinite: true,
-                centerMode: true,
-                slidesToShow: 5,
-                slidesToScroll: 3
-            });
-            $(".variable").slick({
-                dots: true,
-                infinite: true,
-                variableWidth: true
-            });
-            $(".lazy").slick({
-                lazyLoad: 'ondemand', // ondemand progressive anticipated
-                infinite: true
-            });
-        });
-    </script>
-    <script src="js/scroll.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 
 </html>
