@@ -1,5 +1,47 @@
 <!doctype html>
 <html lang="en">
+<<<<<<< HEAD
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Signup Page</title>
+    <style>
+      .divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+    </style>
+  <script>
+   
+  </script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+      <?php   include "components/Header/Header.php"?>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+=======
 
 <head>
   <!-- Required meta tags -->
@@ -77,6 +119,22 @@
                     <label class="form-label" for="form3Example4">Password</label>
                   </div>
 
+<<<<<<< HEAD
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" id="form3Example4" class="form-control form-control-lg"
+              placeholder="Enter password" />
+            <label class="form-label" for="form3Example4">Password</label>
+          </div>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" class="btn btn-primary btn-lg"  style="padding-left: 2.5rem; padding-right: 2.5rem;">Next</button>
+           
+          </div>
+
+        </form>
+       
+
+=======
 
                   <div class="text-center text-lg-start mt-4 pt-2">
                     <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
@@ -88,6 +146,7 @@
           </div>
 
         </section>
+>>>>>>> a7cb4536349a2e6f57c82518f6997fb1e7325ac1
       </div>
 
     </div>

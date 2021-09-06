@@ -21,7 +21,7 @@
 
                <div class="col-md-12 col-sm-12">
                     <!-- SECTION TITLE -->
-                    <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
+                    <div class="text-center my-4" data-wow-delay="0.2s">
                          <h2>Get in touch</h2>
                          <p>Lorem ipsum dolor sit amet, consectetur venenatis tincidunt.</p>
                     </div>
@@ -49,18 +49,50 @@
 
                <div class="col-md-5 col-sm-8">
                     <!-- CONTACT INFO -->
-                    <div class="wow fadeInUp contact-info" data-wow-delay="0.4s">
-                         <div class="section-title">
+                    <div class="detail">
+                        
                               <h2>Contact Info</h2>
-                              <p></p>
-                         </div>
-                         
-                         <p><i class="fa fa-map-marker"></i> 456 New Street 22000, New York City, USA</p>
-                         <p><i class="fa fa-comment"></i> <a href="mailto:info@company.com">info@company.com</a></p>
-                         <p><i class="fa fa-phone"></i> 010-020-0340</p>
+                              <h5>Mailling Address</h5>
+                              <p>	Maharaja Agrasen Institute of Management and Technology,
+                            Near Agrasen Chowk, Old Saharanpur Road,
+                            (Adjacent to Sector-15, HUDA)
+                            Jagadhri-135003.<p>
+                    
+                         <h5>Office Tel. No.</h5>
+                         <p> +91-82229-48277 
+                              <br>01732-235255</p>
+                         <h5>Email Directory</h5>
+                         <p>director@maimt.com(Director)
+                              placement@maimt.com (Placement Cell)
+                          hodmgt@maimt.com (Department of Management)
+                       hodca@maimt.com (Department of Computer Application)
+                     library@maimt.com (Librarian)</p>
                     </div>
                </div>
-
-          </div>
+      </div>
+          
+         
      </div>
 </section>
+<h2 class=text-center>Contact Persons</h2>
+<div class="flex-container">
+     <!-- <div class="row responsive"> -->
+
+<p>Dr. Narinder Singh Rana</p><br>
+<p>Director</p><br>
+<p>+91-82229-48280</p>
+
+  <!-- <div class="row responsive"> -->
+
+<p>Dr. Narinder Singh Rana</p>
+<p>Director</p>
+<p>+91-82229-48280</p>
+
+  <!-- <div class="row responsive"> -->
+
+<p>Dr. Narinder Singh Rana</p>
+<p>Director</p>
+<p>+91-82229-48280</p>
+</div>
+</body>
+</html>
