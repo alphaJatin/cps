@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
+<footer class="text-center text-lg-start bg-light text-muted w-100">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <!-- Left -->
@@ -34,12 +34,12 @@
     <!-- Section: Social media -->
 
     <!-- Section: Links  -->
-    <section class="">
+    <section>
         <div class="container-fluid text-center text-md-start">
             <!-- Grid row -->
             <div class="row text-center">
                 <!-- Grid column -->
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-4 mx-auto mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 mx-auto mb-4">
                     <!-- Content -->
                     <h6 class="text-uppercase fw-bold mb-4">
                         <i class="fas fa-gem me-3"></i>Company name
@@ -52,7 +52,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-sm-6 col-md-2 col-lg-3 mt-4 mx-auto mb-4">
+                <div class="col-sm-6 col-md-2 col-lg-3 col-xl-3 mt-4 mx-auto mb-4">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4">
                         Products
@@ -73,7 +73,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-sm-6 col-md-2 col-lg-3 mt-4 mx-auto mb-4">
+                <div class="col-sm-6 col-md-2 col-lg-3 col-xl-3 mt-4 mx-auto mb-4">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4">
                         Useful links
@@ -94,7 +94,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-4 mx-auto mb-md-0 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 mx-auto mb-md-0 mb-4">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4">
                         Contact
