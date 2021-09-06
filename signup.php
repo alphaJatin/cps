@@ -26,6 +26,9 @@
   }
 }
     </style>
+  <script>
+   
+  </script>
   </head>
   <body>
     <div class="container-fluid">
@@ -34,7 +37,7 @@
       <?php   include "components/Header/Header.php"?>
         </div>
       </div>
-    
+      
       <div class="row">
         <div class="col-md-12">
         <section class="vh-100">
@@ -85,15 +88,14 @@
               placeholder="Enter password" />
             <label class="form-label" for="form3Example4">Password</label>
           </div>
-
-
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="button" class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <button type="button" class="btn btn-primary btn-lg"  style="padding-left: 2.5rem; padding-right: 2.5rem;">Next</button>
            
           </div>
 
         </form>
+       
+
       </div>
     </div>
   </div>

@@ -47,7 +47,7 @@
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
         <form>
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-            <p class="lead fw-normal mb-0 me-3"><h1>Log in </h1></p>
+            <p class="lead fw-normal mb-0 me-3"><h1>Password Recovery </h1></p>
             
           </div>
 
@@ -57,34 +57,27 @@
 
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="text" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a Your Username" />
-            <label class="form-label" for="form3Example3">Username</label>
+            <input type="Email" id="form3Example3" aria-describedby="emailHelp" class="form-control form-control-lg"
+              placeholder="Enter a Your Email" />
+            <label class="form-label" for="form3Example3">Email</label>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
             <input type="password" id="form3Example4" class="form-control form-control-lg"
               placeholder="Enter password" />
-            <label class="form-label" for="form3Example4">Password</label>
+            <label class="form-label" for="form3Example4">Enter the New Password</label>
           </div>
 
           <div class="d-flex justify-content-between align-items-center">
-            <!-- Checkbox -->
-            <div class="form-check mb-0">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-              <label class="form-check-label" for="form2Example3">
-                Remember me
-              </label>
-            </div>
-            <a href="recover.php" class="text-body">Forgot password?</a>
+           
+           
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="button" class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="..\cps\signup.php"
-                class="link-danger">Register</a></p>
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">submit</button>
+            
           </div>
 
         </form>
