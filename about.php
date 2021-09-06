@@ -9,25 +9,27 @@
 </head>
 <body>
 
-    
-<nav class="navbar">
-    <div class="part-2">
+  <div class="helo">
+
+      <nav class="navbar">
       <div>
-        <img src="pic1.jpg" alt="image">
-</div>
-        <div class="content-1">
-            <a href=""><i class="fas fa-user-graduate"> Student Login</i></a>
-        </div>
-        <div class="content-2">
-            <a href=""><i class="fas fa-user"> Admin Login</i></a>
-        </div>
-        <div class="content-3">
-            <a href=""><i class="fas fa-home">  Home</i></a>
-        </div>
-        <div class="content-4">
-        <a href=""><i class="fas fa-book-reader"> About</i></a>
-        </div>
+            <div class="part-2">
+          <img src="pic1.jpg" alt="image">
     </div>
- </nav>
-</body>
+          <div class="content-1">
+              <a href=""><i class="fas fa-user-graduate"> Student Login</i></a>
+          </div>
+          <div class="content-2">
+              <a href=""><i class="fas fa-user"> Admin Login</i></a>
+          </div>
+          <div class="content-3">
+              <a href=""><i class="fas fa-home">  Home</i></a>
+          </div>
+          <div class="content-4">
+          <a href=""><i class="fas fa-book-reader"> About</i></a>
+          </div>
+      </div>
+    </nav>
+  </div>  
+</body> 
 </html>

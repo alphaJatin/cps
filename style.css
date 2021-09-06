@@ -1,7 +1,12 @@
+.helo{
+    height:500px;
+    width: 100%;
+    background-image: url(pic1.jpg);
+}
 .navbar{
     padding: 20px 30px;
     display: flex;
-    background-image: url(pic1.jpg);
+    
 }
 .two{
     color: black;
