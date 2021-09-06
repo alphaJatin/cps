@@ -14,7 +14,6 @@
 
 <body>
 <<<<<<< HEAD
-    <?php include "./Components/Header/Header.php" ?>
 =======
     <?php include 'Components/Header/Header.php' ?>
     <?php include 'Components/Footer/Footer.php' ?>
