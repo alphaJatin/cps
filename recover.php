@@ -11,6 +11,11 @@
 
   <title>Login Page</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
     .divider:after,
     .divider:before {
       content: "";
@@ -32,13 +37,8 @@
 </head>
 
 <body>
+  <?php include "components/Header/Header.php" ?>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <?php include "components/Header/Header.php" ?>
-      </div>
-    </div>
-
     <div class="row">
       <div class="col-md-12">
         <section class="vh-100">
@@ -72,11 +72,6 @@
                     <label class="form-label" for="form3Example4">Enter the New Password</label>
                   </div>
 
-                  <div class="d-flex justify-content-between align-items-center">
-
-
-                  </div>
-
                   <div class="text-center text-lg-start mt-4 pt-2">
                     <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">submit</button>
 
@@ -89,20 +84,17 @@
 
         </section>
       </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <?php include "components/Footer/Footer.php" ?>
-        </div>
-      </div>
     </div>
+  </div>
+  <?php include "components/Footer/Footer.php" ?>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
