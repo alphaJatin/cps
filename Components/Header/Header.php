@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
   <div class="container-fluid">
-    <!-- <a class="navbar-brand fs-2 px-4" href="#"><img src="Components/Header/images/logo.png" alt="MAIMT LOGO" width="50p" /></a> -->
+    <a class="navbar-brand fs-2 px-4" href="#"><img src="Components/Header/images/logo.png" alt="MAIMT LOGO" width="50p" /></a>
     <a class="navbar-brand fs-2 px-4" href="#">M A I M T</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,10 +14,10 @@
           <a class="nav-link fw-bold" href="#">Link</a>
         </li>
         <li class="nav-item px-4 py-2">
-          <a class="nav-link fw-bold" href="#">Login</a>
+          <a class="nav-link fw-bold" href="..\cps\login.php">Login</a>
         </li>
         <li class="nav-item px-4 py-2">
-          <a class="nav-link fw-bold" href="#">Singup</a>
+          <a class="nav-link fw-bold" href="..\cps\signup.php">Signup</a>
         </li>
       </ul>
     </div>
