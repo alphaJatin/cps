@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" type="text/css" href="about.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+=======
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="about.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
    
      <?php include '../Components/Header/Header.php';?>
+=======
+    <script src="https://kit.fontawesome.com/2a538a4ef9.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+>>>>>>> 42b2cdf9bddf75771aa017e61b61156ea5e042e9
+>>>>>>> 94fa570697e79edb1a6c8957cff1edadc4f53a10
 </head>
 <body>
      
@@ -46,6 +62,12 @@
  </div>
 
 </div>
+<<<<<<< HEAD
+<?php include '../Components/Header/Header.php'; ?>
+<?php include '../Components/Footer/Footer.php'; ?>
+=======
     
+>>>>>>> 42b2cdf9bddf75771aa017e61b61156ea5e042e9
 </body>
+
 </html>
