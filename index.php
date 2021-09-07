@@ -21,13 +21,13 @@
                     <img src="images/p1_normal.jpg" class="carousel__img d-block w-100" alt="placement1">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/p2_normal.jpg" class="carousel__img d-block w-100" alt="placement2">
+                    <img src="images/p1_normal.jpg" class="carousel__img d-block w-100" alt="placement2">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/p3_normal.jpg" class="carousel__img d-block w-100" alt="placement3">
+                    <img src="images/p1_normal.jpg" class="carousel__img d-block w-100" alt="placement3">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/p4_normal.jpg" class="carousel__img d-block w-100" alt="placement4">
+                    <img src="images/p1_normal.jpg" class="carousel__img d-block w-100" alt="placement4">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
