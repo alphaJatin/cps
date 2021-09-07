@@ -10,15 +10,15 @@
         <li class="nav-item px-3 py-2">
           <a class="nav-link fw-bold active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item px-3 py-2">
-          <a class="nav-link fw-bold" href="#">Link</a>
-        </li>
+      
         <li class="nav-item px-3 py-2">
           <a class="nav-link fw-bold" href="..\cps\login.php">Login</a>
         </li>
-        <li class="nav-item px-3 py-2">
-          <a class="nav-link fw-bold" href="..\cps\signup.php">Signup</a>
+        
+          <li class="nav-item px-3 py-2">
+          <a class="nav-link fw-bold" href="../Contact/Contact.php">Contact Us</a>
         </li>
+    
       </ul>
     </div>
   </div>
