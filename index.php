@@ -13,7 +13,12 @@
 </head>
 
 <body>
-    <?php include 'Components/Header/Header.php' ?>
+
+    <?php
+    $path = $_SERVER['DOCUMENT_ROOT'];
+    $path .= "/cps/Components/Header/Header.php";
+    include_once($path);
+    ?>
 
     <?php include 'Components/Carousel/Carousel.html' ?>
 

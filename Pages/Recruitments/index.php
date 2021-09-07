@@ -18,7 +18,7 @@ $result = $con->query($query);
 </head>
 
 <body>
-    <?php include "../../Components/Header/Header.php" ?>
+    <?php include "Header/Header.php" ?>
 
     <div class="container-fluid">
         <h1 class="my-4 text-danger text-style">Latest Recruitments</h1>
@@ -28,7 +28,7 @@ $result = $con->query($query);
                 while ($row = $result->fetch_assoc()) { ?>
                     <li class="list-group-item">
                         <span><?php echo $row['name'] ?> <span class="fw-bold text-danger">is hiring !!</span></span>
-                        <button class="btn btn-danger">Apply Now</button>
+                        <button class="btn btn-danger btn-style">Apply</button>
                     </li>
                 <?php }
             } else { ?>
