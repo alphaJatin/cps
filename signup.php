@@ -1,11 +1,9 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -37,6 +35,7 @@
 
     <div class="row">
       <div class="col-md-12">
+
         <section class="vh-100">
           <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -77,17 +76,14 @@
                     <label class="form-label" for="form3Example4">Password</label>
                   </div>
 
+
                   <!-- Password input -->
                   <div class="form-outline mb-3">
                     <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" />
                     <label class="form-label" for="form3Example4">Password</label>
                   </div>
-                  <div class="text-center text-lg-start mt-4 pt-2">
-                    <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Next</button>
-                  </div>
-                </form>
                 <div class="text-center text-lg-start mt-4 pt-2">
-                  <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                  <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Signup</button>
                 </div>
                 </form>
               </div>

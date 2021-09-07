@@ -1,0 +1,12 @@
+.main{
+    height: 500px;
+    width: 100%;
+   background-image: url(pic1.jpg);
+}   
+a{
+    display: flex;
+    float: right;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
