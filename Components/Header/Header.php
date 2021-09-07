@@ -16,9 +16,7 @@
         <li class="nav-item px-4 py-2">
           <a class="nav-link fw-bold" href="..\cps\login.php">Login</a>
         </li>
-        <li class="nav-item px-4 py-2">
-          <a class="nav-link fw-bold" href="..\cps\signup.php">Signup</a>
-        </li>
+        
       </ul>
     </div>
   </div>

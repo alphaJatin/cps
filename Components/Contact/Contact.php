@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="css/style.css">
    
    <?php include '../Header/Header.php' ?> 
@@ -77,22 +76,17 @@
 <h2 class=text-center>Contact Persons</h2>
 <div class="flex-container">
      <!-- <div class="row responsive"> -->
-
-<p>Dr. Narinder Singh Rana</p><br>
-<p>Director</p><br>
-<p>+91-82229-48280</p>
-
-  <!-- <div class="row responsive"> -->
-
-<p>Dr. Narinder Singh Rana</p>
-<p>Director</p>
-<p>+91-82229-48280</p>
-
-  <!-- <div class="row responsive"> -->
-
-<p>Dr. Narinder Singh Rana</p>
-<p>Director</p>
-<p>+91-82229-48280</p>
+<div class="foot" style="margin-left:40px">
+     narinder rana <br>director <br>1020304050
 </div>
+<div class="foot1" style="margin-left:600px">
+narinder rana <br>director <br>1020304050
+</div>
+<div class="foot2" style="margin-left:550px">
+narinder rana <br>director <br>1020304050
+</div>
+</div>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
