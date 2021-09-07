@@ -3,73 +3,6 @@
     padding: 0px;
     font-family: 'Poppins', sans-serif;
 }
-.container{
-    margin: 0 auto;
-}
-.header{
-    display: flex;
-    width: 100%;
-    background-color: black;
-    justify-content:space-between;
-    align-items: center;
-    height: 50px;
-}
-.header1{
-     width: 30%; 
-     padding: 30px 30px;
-}
-.header2{
-    padding: 30px 30px;
-}
-.header1 a{
-    color:white;
-    display: flex;
-    font-size: 20px;
-    text-decoration: none;
-    
-    }
-.header2 a{
-    color:white;
-    font-size: 20px; 
-    padding: 10px 10px;
-    text-align: center;
-}
-.navbar{
-    background-color:lightblue;
-    padding: 20px 30px;
-    display: flex;
-}
-.one img{
-    height: 50px;
-}
-.two{
-    color: black;
-    font-size: 25px;
-    font-weight: bolder;
-    text-transform: uppercase;
-    text-align: center;
-}
-.part-1{
-    display: flex; 
-    width: 50%;
-    justify-content: space-between;
-}
-.part-2{
-    width: 50%;
-    display: flex;
-    justify-content: space-evenly;
-}
-.part-2 a{
-    text-transform: capitalize;
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    font-weight: bolder;
-}
-.part-2 :hover{
-    color: gray;
-
-}
 .main{
     display: flex;
     justify-content: space-between;
@@ -96,7 +29,7 @@
     padding: 10px 140px;
 }
 .main img{
-    width: 60%;
+    width: 300px;
     padding: 20px 150px;
 }
 
@@ -130,28 +63,3 @@
  .odd p{
      color: white;
  }
-.footer{
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 30px 100px;
-    margin-bottom: 0%;
-    margin-top: 5%;
-    
-}
-.footer-1 a{
-    color: white;
-    margin-top: 0px;
-    padding: 50px 20px;
-    text-align: center;
-    text-decoration: none;
-}
-   
-.footer-2 a{
-        color: white;
-        margin-top: 0px;
-        padding: 50px 20px;
-        text-decoration: none;
-        text-align: left;
-}
