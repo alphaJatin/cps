@@ -16,51 +16,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="about.css">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+   
+     <?php include '../Components/Header/Header.php';?>
+=======
     <script src="https://kit.fontawesome.com/2a538a4ef9.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
 >>>>>>> 42b2cdf9bddf75771aa017e61b61156ea5e042e9
+>>>>>>> 94fa570697e79edb1a6c8957cff1edadc4f53a10
 </head>
 <body>
-    <div class="container">
-        <div class="wrapper">
-    <div class="header">
-        <div class="header1">
-            <a href=""><i class="fas fa-phone-alt">
-           Call us+  9996892779</i></a>
-        </div>
-        <div class="header2">
-           <a href=""> <i class="fab fa-facebook"></i></a>
-           <a href=""> <i class="fab fa-instagram"></i></a>
-           <a href=""> <i class="fab fa-whatsapp"></i></a>
-           <a href=""><i class="fab fa-youtube"></i></a>
-           <a href=""><i class="fab fa-twitter"></i></a>
-           <a href=""><i class="fab fa-google-plus-g"></i></a>
-        </div>
-    </div>  
-    <nav class="navbar">
-        <div class="part-1">
-        <div class="one">
-        <img src="Maimtlogo.png">
-        </div>
-        <div class="two">
-        <p>Maharaja agresen Institute Of Management And Technology</p>
-    </div>
-    </div>
-    <div class="part-2">
-        <div class="content-1">
-            <a href=""><i class="fas fa-user-graduate"> Student Login</i></a>
-        </div>
-        <div class="content-2">
-            <a href=""><i class="fas fa-user"> Admin Login</i></a>
-        </div>
-        <div class="content-3">
-            <a href=""><i class="fas fa-home">  Home</i></a>
-        </div>
-        <div class="content-4">
-        <a href=""><i class="fas fa-book-reader"> About</i></a>
-        </div>
-    </div>
- </nav> 
+     
  <div class="main">
      <div class="main-1">
         <h3>A few words about us</h3>
@@ -91,20 +60,7 @@
        Adipisci voluptas, nulla iusto aperiam quasi sequi magnam ab porro maiores. Autem facere beatae, saepe tenetur vel doloremque eveniet veniam. Dolor ducimus cum aspernatur repudiandae rem voluptates veritatis fugit modi!</p>
    </div>
  </div>
- <footer class="footer">
-    <div class="footer-1">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Mail Us</a><br>
-        <br><textarea rows="2" cols="40">Email</textarea>
-    </div>
-    <div class="footer-2">
-        <h3>Address:</h3>
-       <a href=""><i class="fas fa-map-marker-alt">  Agresen Chownk,Jagadhri Road</i></a>
-        <br><br><a href=""><i class="fas fa-phone-alt"> +91-82229-48277</i></a>
-    </div>
-</footer>
-</div>
+
 </div>
 <<<<<<< HEAD
 <?php include '../Components/Header/Header.php'; ?>
