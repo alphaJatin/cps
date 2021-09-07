@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item px-3 py-2">
-          <a class="nav-link fw-bold active" aria-current="page" href="#">Home</a>
+          <a class="nav-link fw-bold active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item px-3 py-2">
           <a class="nav-link fw-bold" href="#">Link</a>
