@@ -16,7 +16,7 @@
 
     <?php
     $path = $_SERVER['DOCUMENT_ROOT'];
-    $path .= "/cps/Components/Header/Header.php";
+    $path .= "/cps/Header.php";
     include_once($path);
     ?>
 

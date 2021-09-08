@@ -16,7 +16,7 @@
         </li>
 
         <li class="nav-item px-3 py-2">
-          <a class="nav-link fw-bold" href="../Contact/Contact.php">Contact Us</a>
+          <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
         </li>
 
       </ul>

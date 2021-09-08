@@ -32,7 +32,7 @@
 </head>
 
 <body>
-  <?php include "components/Header/Header.php" ?>
+  <?php include "Header.php" ?>
 
   <div class="container-fluid">
     <div class="row">
