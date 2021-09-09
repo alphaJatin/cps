@@ -37,7 +37,7 @@
 </head>
 
 <body>
-  <?php include "components/Header/Header.php" ?>
+  <?php include "Header.php" ?>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -53,7 +53,6 @@
                     <p class="lead fw-normal mb-0 me-3">
                     <h1>Password Recovery </h1>
                     </p>
-
                   </div>
 
                   <div class="divider d-flex align-items-center my-4">
@@ -62,14 +61,16 @@
 
                   <!-- Email input -->
                   <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3">Username</label>
                     <input type="Email" id="form3Example3" aria-describedby="emailHelp" class="form-control form-control-lg" placeholder="Enter a Your Email" />
-                    <label class="form-label" for="form3Example3">Email</label>
+                    
                   </div>
 
                   <!-- Password input -->
                   <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example4">Enter the New Password</label>
                     <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" />
-                    <label class="form-label" for="form3Example4">Enter the New Password</label>
+                    
                   </div>
 
                   <div class="text-center text-lg-start mt-4 pt-2">
