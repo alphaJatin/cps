@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -30,9 +31,9 @@
 </head>
 
 <body>
-  <?php include "components/Header/Header.php" ?>
+  
   <div class="container-fluid my-4">
-
+  <?php include "Header.php" ?>
     <div class="row">
       <div class="col-md-12">
 
@@ -43,7 +44,7 @@
                 <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Sample image">
               </div>
               <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form>
+                <form action="" method="post">
                   <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                     <p class="lead fw-normal mb-0 me-3">
                     <h1>Sign Up </h1>
@@ -51,36 +52,51 @@
                   </div>
 
                   <div class="form-outline mb-3">
-                    <input type="text" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter Your Full Name" />
+                    <input type="text" name="name" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter Your Full Name" />
                     <label class="form-label" for="form3Example3">Name</label>
+                  </div>
+                  
+                  <div class="form-outline mb-3">
+                    <input type="email" name="email" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter Your Email" />
+                    <label class="form-label" for="form3Example3">Email</label>
                   </div>
 
                   <div class="form-outline mb-3">
-                    <input type="text" id="form3Example3" class="form-control form-control-lg" placeholder="Enter your department" />
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>BCA</option>
+                    <option>MCA</option>
+                    <option>BBA</option>
+                    <option>MBA</option>
+                    <option>OTHER</option>
+                  </select>
                     <label class="form-label" for="form3Example3">Department</label>
                   </div>
                   <div class="form-outline mb-3">
-                    <input type="tel" id="form3Example3" class="form-control form-control-lg" placeholder="Enter your Contact Number" />
+                    <input type="tel" id="form3Example3" name="contact" class="form-control form-control-lg" placeholder="Enter your Contact Number" />
                     <label class="form-label" for="form3Example3">Contact Number </label>
                   </div>
 
                   <!-- Username input -->
                   <div class="form-outline mb-3">
-                    <input type="text" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a Your Username" />
+                    <input type="text" id="form3Example3" name="username" class="form-control form-control-lg" placeholder="Enter a Your Username" />
                     <label class="form-label" for="form3Example3">Username</label>
                   </div>
 
                   <!-- Password input -->
                   <div class="form-outline mb-3">
-                    <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" />
+                    <input type="password" id="form3Example4" name="password" class="form-control form-control-lg" placeholder="Enter password" />
                     <label class="form-label" for="form3Example4">Password</label>
                   </div>
 
+                  <div class="form-outline mb-3">
+                    <input type="password" id="form3Example4" name="repassword" class="form-control form-control-lg" placeholder="confirm password" />
+                    <label class="form-label" for="form3Example4">ConfirmPassword</label>
+                  </div>
 
                   <!-- Password input -->
                 
                 <div class="text-center text-lg-start mt-4 pt-2">
-                  <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Signup</button>
+                  <button type="submit" name="signup" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Signup</button>
                 </div>
                 </form>
               </div>

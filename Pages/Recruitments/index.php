@@ -5,6 +5,8 @@ $result = $con->query($query);
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- merge in index.php -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +20,34 @@ $result = $con->query($query);
 </head>
 
 <body>
-    <?php include "Header/Header.php" ?>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-1">
+        <div class="container-fluid">
+            <a class="navbar-brand px-4" href="../../index.php"><img src="../../logo.png" alt="MAIMT" width="50px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-evenly">
+                    <li class="nav-item px-3 py-2">
+                        <a class="nav-link fw-bold" aria-current="page" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item px-3 py-2">
+                        <a class="nav-link fw-bold active" href="../Contact/Contact.php">Drives</a>
+                    </li>
+                    <li class="nav-item px-3 py-2">
+                        <a class="nav-link fw-bold" href="../Contact/Contact.php">About Us</a>
+                    </li>
+                    <li class="nav-item px-3 py-2">
+                        <a class="nav-link fw-bold" href="../Contact/Contact.php">Contact Us</a>
+                    </li>
+                    <li class="nav-item px-3 py-2">
+                        <a class="nav-link fw-bold" href="../../login.php">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="container-fluid">
         <h1 class="my-4 text-danger text-style">Latest Recruitments</h1>
@@ -39,6 +68,7 @@ $result = $con->query($query);
         </ul>
 
         <div id="exampleSlider">
+            <div class="h1 text-center py-2 text-danger">Our Partners</div>
             <div class="MS-content">
                 <div class="item">
                     <img src="img/debut_infotech.png" alt="c1">
@@ -66,6 +96,7 @@ $result = $con->query($query);
         </div>
     </div>
     <?php include "../../Components/Footer/Footer.php" ?>
+
     <!-- Include jQuery -->
     <script src="js/jquery-2.2.4.min.js"></script>
 
@@ -79,25 +110,6 @@ $result = $con->query($query);
             slideAll: true,
             duration: 1500
         });
-    </script>
-    <script type="application/javascript">
-        // const element = document.getElementById("listGroup");
-        // var Height = element.scrollHeight;
-        // var currentHeight = 0;
-        // var bool = true;
-        // var step = 5;
-        // var speed = 200;
-        // var interval = setInterval(scrollpage, speed)
-
-        // function scrollpage() {
-        //     if (currentHeight < 0 || currentHeight > Height)
-        //         bool = !bool;
-        //     if (bool) {
-        //         element.scrollTo(0, currentHeight += step);
-        //     } else {
-        //         element.scrollTo(0, currentHeight -= step);
-        //     }
-        // }
     </script>
 </body>
 

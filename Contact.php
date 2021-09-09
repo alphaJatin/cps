@@ -6,9 +6,9 @@
     <title>Document</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="contactstyle.css">
    
-   <?php include '../Header/Header.php' ?> 
+   <?php include 'Header.php' ?> 
 </head>
 <body>
 <!------ Include the above in your HEAD tag ---------->
