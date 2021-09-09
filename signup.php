@@ -52,16 +52,19 @@
                   </div>
 
                   <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example3">Name</label>
                     <input type="text" name="name" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter Your Full Name" />
-                    <label class="form-label" for="form3Example3">Name</label>
+                    
                   </div>
                   
                   <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example3">Email</label>
                     <input type="email" name="email" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter Your Email" />
-                    <label class="form-label" for="form3Example3">Email</label>
+                    
                   </div>
 
                   <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example3">Department</label>
                   <select class="form-control" id="exampleFormControlSelect1">
                     <option>BCA</option>
                     <option>MCA</option>
@@ -69,28 +72,48 @@
                     <option>MBA</option>
                     <option>OTHER</option>
                   </select>
-                    <label class="form-label" for="form3Example3">Department</label>
+                    
                   </div>
                   <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example3">Contact Number </label>
                     <input type="tel" id="form3Example3" name="contact" class="form-control form-control-lg" placeholder="Enter your Contact Number" />
-                    <label class="form-label" for="form3Example3">Contact Number </label>
+                    
                   </div>
 
+                  <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example3">10th  Marks</label>
+                    <input type="text" name="t2" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter 10th  Mark" />
+                    
+                  </div>
+
+                  <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example3">12th  Marks</label>
+                    <input type="text" name="t2" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter 12th  Mark" />
+                    
+                  </div>
+                  <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example3"> Graduation Marks</label>
+                    <input type="text" name="tg" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter Graduation Marks" />
+                    
+                  </div>
                   <!-- Username input -->
                   <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example3">Username</label>
                     <input type="text" id="form3Example3" name="username" class="form-control form-control-lg" placeholder="Enter a Your Username" />
-                    <label class="form-label" for="form3Example3">Username</label>
+                    
                   </div>
 
                   <!-- Password input -->
                   <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example4">Password</label>
                     <input type="password" id="form3Example4" name="password" class="form-control form-control-lg" placeholder="Enter password" />
-                    <label class="form-label" for="form3Example4">Password</label>
+                    
                   </div>
 
                   <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example4">ConfirmPassword</label>
                     <input type="password" id="form3Example4" name="repassword" class="form-control form-control-lg" placeholder="confirm password" />
-                    <label class="form-label" for="form3Example4">ConfirmPassword</label>
+                    
                   </div>
 
                   <!-- Password input -->
