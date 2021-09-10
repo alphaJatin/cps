@@ -1,6 +1,5 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    session_start();
     require "../../config/db_con.php";
     $name = $_POST['name'];
     $package = $_POST['package'];
@@ -75,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <input type="text" placeholder="Name" name="name" class="form-control">
                         </div>
                         <div class="inputbox my-3"> <span>Anual Package </span>
-                            <input type="text" placeholder="2.4 " name="anual_sal" class="form-control">
+                            <input type="text" placeholder="2.4 " name="package" class="form-control">
                         </div>
                         <div class="inputbox my-3"> <span>Location </span>
                             <input type="text" placeholder="Chandigrh" class="form-control" name="location">
