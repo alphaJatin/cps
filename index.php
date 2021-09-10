@@ -169,7 +169,7 @@ $result = $con->query($query);
 
 
         .hero-image {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./Components/Carousel/Images/pic.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./banner.jpg");
             height: 80%;
             background-position: center;
             background-repeat: no-repeat;
