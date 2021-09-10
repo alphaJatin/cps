@@ -80,19 +80,12 @@
 
           </div>
      </section>
-     <h2 class=text-center>Contact Persons</h2>
-     <div class="flex-container">
-          <!-- <div class="row responsive"> -->
-          <div class="foot" style="margin-left:40px">
-               narinder rana <br>director <br>1020304050
-          </div>
-          <div class="foot1" style="margin-left:600px">
-               narinder rana <br>director <br>1020304050
-          </div>
-          <div class="foot2" style="margin-left:550px">
-               narinder rana <br>director <br>1020304050
-          </div>
-     </div>
+     
+     
+
+
+
+     
      <?php include './Components/Footer/Footer.php'?>
      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
