@@ -1,11 +1,31 @@
-* {
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-}
 .carousel__img {
   height: 450px;
   object-fit: cover;
 }
 
-/* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); */
+input:valid,
+textarea:valid {
+  border: 2px solid lightgrey !important;
+  border-radius: 5px;
+}
+
+small {
+  display: none;
+  color: red;
+}
+
+#phpError {
+  text-align: center;
+  color: red;
+}
+
+input:invalid {
+  border: 2px solid red !important;
+  border-radius: 6px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: none !important;
+}

@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require "../../config/db_con.php";
+    require_once "../../config/db_con.php";
     $name = $_POST['name'];
     $package = $_POST['package'];
     $location = $_POST['location'];
