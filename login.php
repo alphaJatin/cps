@@ -25,7 +25,7 @@
     }
   </script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/1422ef591f.js" crossorigin="anonymous"></script>
 
   <title>Login Page</title>
   <style>
@@ -50,11 +50,11 @@
 
     small {
       display: none;
-      color: red;
+      color: #dc3545;
     }
 
     input:invalid {
-      border: 2px solid red !important;
+      border: 2px solid #dc3545 !important;
       border-radius: 6px;
     }
 
@@ -69,11 +69,19 @@
         height: 100%;
       }
     }
+
+    .nav-item a:hover {
+      color: #dc3545 !important;
+    }
+
+    .active {
+      color: #dc3545 !important;
+    }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light p-1">
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-1 mb-3 bg-body rounded">
     <div class="container-fluid">
       <a class="navbar-brand px-4" href="./index.php"><img src="./logo.png" alt="MAIMT" width="50px"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,19 +90,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-evenly">
           <li class="nav-item px-3 py-2">
-            <a class="nav-link fw-bold active" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link fw-bold " aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item px-3 py-2">
-            <a class="nav-link fw-bold" href="./Pages/Recruitments/recruitments.php">Drives</a>
-          </li>
-          <li class="nav-item px-3 py-2">
-            <a class="nav-link fw-bold" href="Contact/Contact.php">About Us</a>
+            <a class="nav-link fw-bold " href="about.php">About Us</a>
           </li>
           <li class="nav-item px-3 py-2">
             <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
           </li>
           <li class="nav-item px-3 py-2">
-            <a class="nav-link fw-bold" href="login.php">Login</a>
+            <a class="nav-link fw-bold active" href="login.php">Login</a>
           </li>
         </ul>
       </div>
@@ -112,10 +117,8 @@
               </div>
               <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                 <form action="#" name="login" method="post" onsubmit="return validateLogin();">
-                  <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                    <p class="lead fw-normal mb-0 me-3">
+                  <div class="text-center text-danger">
                     <h1>Log in </h1>
-                    </p>
                   </div>
                   <div class="divider d-flex align-items-center my-4">
                   </div>
@@ -145,8 +148,8 @@
                     <a href="recover.php" class="text-body">Forgot password?</a>
                   </div>
 
-                  <div class="text-center text-lg-start mt-4 pt-2">
-                    <input type="submit" class="btn btn-primary btn-lg" value="LOGIN" style="padding-left: 2.5rem; padding-right: 2.5rem;" />
+                  <div class="text-center text-center mt-4 pt-2">
+                    <input type="submit" class="btn btn-danger btn-md" value="LOGIN" style="padding-left: 2.5rem; padding-right: 2.5rem;" />
                     <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="signup.php" class="link-danger">Register</a></p>
                   </div>
                 </form>
@@ -158,6 +161,7 @@
     </div>
   </div>
   <?php include_once "./Components/Footer/Footer.php" ?>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>

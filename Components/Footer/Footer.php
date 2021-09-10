@@ -1,123 +1,60 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted w-100">
+<footer class="text-center text-lg-start bg-light text-muted my-2">
     <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <!-- Left -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-2 bg-danger text-light">
         <div class="me-5 d-none d-lg-block">
             <span>Get connected with us on social networks:</span>
         </div>
-        <!-- Left -->
-
-        <!-- Right -->
         <div>
-            <a href="" class="me-4 text-reset">
+            <a href="" class="me-4 text-reset text-decoration-none">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
+            <a href="" class="me-4 text-reset text-decoration-none">
                 <i class="fab fa-google"></i>
             </a>
-            <a href="" class="me-4 text-reset">
+            <a href="" class="me-4 text-reset text-decoration-none">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="" class="me-4 text-reset">
+            <a href="" class="me-4 text-reset text-decoration-none">
                 <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-github"></i>
             </a>
         </div>
         <!-- Right -->
     </section>
-    <!-- Section: Social media -->
-
-    <!-- Section: Links  -->
     <section>
-        <div class="container-fluid text-center text-md-start">
+        <div class="container-fluid text-center text-md-start my-4">
             <!-- Grid row -->
             <div class="row text-center">
                 <!-- Grid column -->
-                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 mx-auto mb-4">
+                <div class="col-sm-12 col-md-3 my-1 mx-auto mb-4">
                     <!-- Content -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        <i class="fas fa-gem me-3"></i>Company name
+                    <h6 class="text-uppercase fw-bold mb-4 text-dark">
+                        <i class="fas fa-gem me-3"></i>M A I M T
                     </h6>
                     <p>
-                        Here you can use rows and columns to organize your footer content. Lorem ipsum
-                        dolor sit amet, consectetur adipisicing elit.
+                        MAIMT Celebrating 24 Years Of Excellence in Management & IT Education.
                     </p>
                 </div>
-                <!-- Grid column -->
 
-                <!-- Grid column -->
-                <div class="col-sm-6 col-md-2 col-lg-3 col-xl-3 mt-4 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Products
+                <div class="col-sm-12 col-md-4 my-1 mx-auto mb-md-0 mb-4 text-start">
+                    <h6 class="text-uppercase fw-bold mb-4 text-center text-dark">
+                        <i class="fas fa-gem me-3"></i>Contact
                     </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Angular</a>
+                    <p><i class="fas fa-home me-3 text-dark"></i>
+                        Near Agrasen Chowk, Old Saharanpur Road,
+                        Jagadhri-135003.</p>
+                    <p class="">
+                        <i class="fas fa-envelope me-3 text-dark"></i>
+                        email@gmail.com
                     </p>
-                    <p>
-                        <a href="#!" class="text-reset">React</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Vue</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Laravel</a>
-                    </p>
+                    <p><i class="fas fa-phone me-3 text-dark"></i> +91-82229-48277</p>
                 </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-sm-6 col-md-2 col-lg-3 col-xl-3 mt-4 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Useful links
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Pricing</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Settings</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Orders</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Help</a>
-                    </p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 mx-auto mb-md-0 mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Contact
-                    </h6>
-                    <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                    <p>
-                        <i class="fas fa-envelope me-3"></i>
-                        info@example.com
-                    </p>
-                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                    <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-                </div>
-                <!-- Grid column -->
             </div>
-            <!-- Grid row -->
         </div>
     </section>
-    <!-- Section: Links  -->
-
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class="text-center p-2 text-dark" style="background-color: rgba(0, 0, 0, 0.05);">
         &copy; 2021 Copyright:
-        <a class="text-reset fw-bold" href="https://maimt.com/">MAIMT.com</a>
+        <a class="fw-bold text-dark" href="https://maimt.com/">MAIMT.com</a>
     </div>
     <!-- Copyright -->
 </footer>
