@@ -73,14 +73,14 @@
 
                     <div class="form-outline mb-3">
                       <label class="form-label" for="form3Example3">Name</label>
-                      <input type="text" name="name" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter Your Full Name" />
-
+                      <input type="text" name="name" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter Your Full Name" pattern="[A-Za-z]{3,10}" minlength="3" maxlength="25" />
+                      <small>First name should be 3 to 10 characters long.</small>
                     </div>
 
                     <div class="form-outline mb-3">
                       <label class="form-label" for="form3Example3">Email</label>
-                      <input type="email" name="email" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter Your Email" />
-
+                      <input type="email" name="email" id="form3Example3" class="form-control form-control-lg" placeholder=" Enter Your Email" pattern="[0-9A-Za-z\._-]{3,}@[A-Za-z]{2,}\.[A-Za-z]{2,}" />
+                      <small>Enter a valid email.</small>
                     </div>
 
                     <div class="form-outline mb-3">
