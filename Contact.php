@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head>
+<<<<<<< HEAD
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,33 @@
      <link rel="stylesheet" href="contactstyle.css">
 
      <?php include 'Header.php' ?>
+=======
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
+    <link rel="stylesheet" type="text/css" href="contactstyle.css">
+   
+   <?php include 'Header.php' ?> 
+   <style>
+.container
+{
+     background:url('contact2.jpg');
+     background-size: cover;
+}
+.detail
+  {
+    color: white;
+
+  }
+  h2
+  {
+       color: white;
+  }
+  </style>
+>>>>>>> 700c67d501fee9fb7f5cc88a0af8ff9ef4373661
 </head>
 
 <body>
@@ -20,6 +48,7 @@
           <div class="container">
                <div class="row">
 
+<<<<<<< HEAD
                     <div class="col-md-12 col-sm-12">
                          <!-- SECTION TITLE -->
                          <div class="text-center my-4" data-wow-delay="0.2s">
@@ -27,6 +56,15 @@
                               <p>Lorem ipsum dolor sit amet, consectetur venenatis tincidunt.</p>
                          </div>
                     </div>
+=======
+               <div class="col-md-12 col-sm-12">
+                    <!-- SECTION TITLE -->
+                    <div class="text-center my-4" data-wow-delay="0.2s">
+                         <h2>Get in touch</h2>
+                         
+                </div>
+               </div>
+>>>>>>> 700c67d501fee9fb7f5cc88a0af8ff9ef4373661
 
                     <div class="col-md-7 col-sm-10">
                          <!-- CONTACT FORM HERE -->
@@ -92,5 +130,10 @@
      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
+<<<<<<< HEAD
 
 </html>
+=======
+</html>
+<?php include './Components/Footer/Footer.php'?>
+>>>>>>> 700c67d501fee9fb7f5cc88a0af8ff9ef4373661

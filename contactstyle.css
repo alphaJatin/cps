@@ -3,6 +3,7 @@
   Contact section              
 -----------------------------------------*/
 
+
 .contact-info .fa {
   padding-right: 5px;
 }
@@ -28,7 +29,7 @@
 }
 
 #contact button#submit {
-  background: #2b2b2b;
+  background: #6b4216;
   border: none;
   border-radius: 50px;
   color: #ffffff;
@@ -46,3 +47,4 @@
     background-color: #f1f1f1;
     flex-direction:row;
   }
+  

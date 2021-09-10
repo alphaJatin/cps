@@ -9,6 +9,14 @@
         <li class="nav-item px-3 py-2">
           <a class="nav-link fw-bold active" aria-current="page" href="index.php">Home</a>
         </li>
+<<<<<<< HEAD
+        <li class="nav-item px-3 py-2">
+          <a class="nav-link fw-bold " href="about.php">About</a>
+        </li>
+
+
+=======
+>>>>>>> 4ef236894580bc5e5e5c7c75dd35992c3a39958a
         <li class="nav-item px-3 py-2">
           <a class="nav-link fw-bold" href="./Pages/Recruitments/recruitments.php">Drives</a>
         </li>
