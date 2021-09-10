@@ -185,6 +185,46 @@ $result = $con->query($query);
             transform: translate(-50%, -50%);
             color: white;
         }
+
+        .button {
+            border: none;
+            text-align: center;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        .nav-item a:hover {
+            color: #dc3545 !important;
+        }
+
+        .active {
+            color: #dc3545 !important;
+        }
     </style>
 </head>
 
@@ -196,7 +236,7 @@ $result = $con->query($query);
             <h1>M A I M T</h1>
             <p style="letter-spacing: 1px;">MAHARAJA AGRASEN
                 INSTITUTE OF MANAGEMENT & TECHNOLOGY</p>
-            <a class="btn btn-danger" href="#goto">Explore</a>
+            <a class="btn btn-danger button" href="#goto"><span>Explore</span></a>
         </div>
     </div>
 
