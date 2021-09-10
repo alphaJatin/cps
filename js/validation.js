@@ -3,7 +3,7 @@
 function validateSignUp() {
   const ERROR = document.getElementsByClassName("error-msg");
   const name = signup.name;
-  const email = signup.email;
+  const userName = signup.userName;
   const department = signup.department;
   const number = signup.number;
   const marks12 = signup.marks12;
@@ -15,7 +15,7 @@ function validateSignUp() {
     ERROR[0].style.display = "inline-block";
     return false;
   } else ERROR[0].style.display = "none";
-  if (email.value === "" || email.validity.patternMismatch) {
+  if (userName.value === "" || userName.validity.patternMismatch) {
     ERROR[1].style.display = "inline-block";
     return false;
   } else ERROR[1].style.display = "none";
@@ -47,19 +47,3 @@ function validateSignUp() {
   return true;
 }
 
-/* ---------------------------- Login Validation ---------------------------- */
-
-function validateLogin() {
-  const ERROR = document.getElementsByClassName("error-msg");
-  const email = signup.email;
-  const pass = signup.password;
-  if (email.value === "" || email.validity.patternMismatch) {
-    ERROR[0].style.display = "inline-block";
-    return;
-  } else ERROR[0].style.display = "none";
-  if (pass.value === "") {
-    ERROR[1].style.display = "inline-block";
-    return;
-  } else ERROR[1].style.display = "none";
-  setData("login");
-}
