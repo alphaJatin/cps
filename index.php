@@ -16,7 +16,7 @@
 
     <?php include_once("./Header.php"); ?>
 
-    <?php include 'Components/Carousel/Carousel.html' ?>
+    <?php include_once 'Components/Carousel/Carousel.html' ?>
 
     <?php include 'Components/Footer/Footer.php' ?>
 

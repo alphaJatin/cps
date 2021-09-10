@@ -1,3 +1,16 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    session_start();
+    require "../../config/db_con.php";
+    $name = $_POST['name'];
+    $package = $_POST['package'];
+    $location = $_POST['location'];
+    $date = $_POST['date'];
+    $query = "INSERT INTO company (name, package, location, date) VALUES('$name','$package','$location','$date');";
+    if (!$con->query($query))  echo "Error: " . $conn->error;
+}
+?>
+
 <html>
 
 <head>
@@ -56,16 +69,13 @@
         <div class="card m-4 p-3">
             <h2 class="text-center rec-title">ADD COMPANY</h2>
             <div class="row">
-                <div class="col-md-6">
+                <form class="col-md-6" method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
                     <div class="form">
                         <div class="inputbox my-3"> <span>Company Name </span>
-                            <input type="text" placeholder="Name" name="cname" class="form-control">
+                            <input type="text" placeholder="Name" name="name" class="form-control">
                         </div>
-                        <div class="inputbox my-3"> <span>Experience Required </span>
-                            <input type="text" placeholder="0-5" name="expe" class="form-control">
-                        </div>
-                        <div class="inputbox my-3"> <span>Anual Pakage </span>
-                            <input type="text" placeholder="2.4 " name="anual" class="form-control">
+                        <div class="inputbox my-3"> <span>Anual Package </span>
+                            <input type="text" placeholder="2.4 " name="anual_sal" class="form-control">
                         </div>
                         <div class="inputbox my-3"> <span>Location </span>
                             <input type="text" placeholder="Chandigrh" class="form-control" name="location">
@@ -73,12 +83,12 @@
                         <div class="inputbox my-3"> <span>Date of campus</span>
                             <input type="date" name="date" class="form-control">
                         </div>
-                        <div class="form-check my-3"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> I agree to the terms and conditions of <a href="" class="login">Privacy & Policy</a> </label> </div>
+                        <div class="form-check my-3"> <input class="form-check-input" type="checkbox" value="checked" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> I agree to the terms and conditions of <a href="#" class="login">Privacy & Policy</a> </label> </div>
                     </div>
                     <div class="d-flex justify-content-between align-items-center p-2">
                         <div class="text-right"> <button class="btn theme-color register btn-block">Register</button> </div>
                     </div>
-                </div>
+                </form>
                 <div class="col-md-6">
                     <div class="text-center mt-5"> <img src="https://i.imgur.com/98GXnDD.png" width="400"> </div>
                 </div>
