@@ -1,6 +1,6 @@
   <?php
-  include 'connection.php';
-  if (isset($_POST['signup'])) {
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    require_once './config/db_con.php';
     $name = $_POST['name'];
     $email = $_POST['email'];
     $contact = $_POST['contact'];
@@ -10,16 +10,10 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $q = "INSERT INTO login (name, email, department, contact, username, password, 12th, graduation) 
-VALUES('$name','$email','$department','$contact','$username','$password','$marks','$degree')";
+    $query = "INSERT INTO login (name, email, department, contact, username, password, 12th, graduation) 
+          VALUES('$name','$email','$department','$contact','$username','$password','$marks','$degree')";
 
-
-    $query = mysqli_query($conn, $q);
-    if (mysqli_query($conn, $q)) {
-      echo "New record created successfully";
-    } else {
-      echo "Error: " . $q . "<br>" . mysqli_error($conn);
-    }
+    if (!$con->query($query)) echo "Error:" . $conn->error;
   }
   ?>
 
