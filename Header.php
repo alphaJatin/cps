@@ -10,7 +10,14 @@
           <a class="nav-link fw-bold active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item px-3 py-2">
+<<<<<<< HEAD
           <a class="nav-link fw-bold" href="Contact/Contact.php">About Us</a>
+=======
+          <a class="nav-link fw-bold" href="./Pages/Recruitments/recruitments.php">Drives</a>
+        </li>
+        <li class="nav-item px-3 py-2">
+          <a class="nav-link fw-bold" href="about.php">About Us</a>
+>>>>>>> ca2286aaa1d18093226228698c985a4301d01948
         </li>
         <li class="nav-item px-3 py-2">
           <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
