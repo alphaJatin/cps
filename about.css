@@ -1,0 +1,40 @@
+*{
+    font-family: 'Slabo 27px', serif;
+}
+#image{
+    height: 50vh;
+    width: 100%;
+}
+#text{
+    margin-top: 50px;
+}
+.container-fluid{
+    background-image: url(./pic.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    text-align: center;
+    opacity: 0.8;
+    margin-top: 40px;
+}
+.container-fluid h1{
+    padding: 50px 0px;
+    text-transform: capitalize;
+    color: black;
+}
+.container-fluid p{
+    margin-top: 20px;
+    line-height: 1.5;
+    color: black;
+    font-weight: 700;
+    font-size:larger;
+    text-transform: capitalize;
+}
+.container h1{
+    text-transform: capitalize;
+    padding: 30px 0px;
+    color: brown;
+}
+#photos{
+    height: 45vh;
+}

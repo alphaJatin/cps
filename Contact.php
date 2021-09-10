@@ -6,9 +6,25 @@
     <title>Document</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     
-    <link rel="stylesheet" href="contactstyle.css">
+    <link rel="stylesheet" type="text/css" href="contactstyle.css">
    
    <?php include 'Header.php' ?> 
+   <style>
+.container
+{
+     background:url('contact2.jpg');
+     background-size: cover;
+}
+.detail
+  {
+    color: white;
+
+  }
+  h2
+  {
+       color: white;
+  }
+  </style>
 </head>
 <body>
 <!------ Include the above in your HEAD tag ---------->
@@ -22,8 +38,8 @@
                     <!-- SECTION TITLE -->
                     <div class="text-center my-4" data-wow-delay="0.2s">
                          <h2>Get in touch</h2>
-                         <p>Lorem ipsum dolor sit amet, consectetur venenatis tincidunt.</p>
-                    </div>
+                         
+                </div>
                </div>
 
                <div class="col-md-7 col-sm-10">
@@ -90,3 +106,4 @@ narinder rana <br>director <br>1020304050
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
+<?php include './Components/Footer/Footer.php'?>

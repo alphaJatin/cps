@@ -10,6 +10,10 @@
         <li class="nav-item px-3 py-2">
           <a class="nav-link fw-bold active" aria-current="page" href="index.php">Home</a>
         </li>
+        <li class="nav-item px-3 py-2">
+          <a class="nav-link fw-bold " href="about.php">About</a>
+        </li>
+
 
         <li class="nav-item px-3 py-2">
           <a class="nav-link fw-bold" href="..\cps\login.php">Login</a>
