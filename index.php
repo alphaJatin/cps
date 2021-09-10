@@ -258,7 +258,7 @@ $result = $con->query($query);
             <?php } ?>
         </ul>
 
-        <div id="exampleSlider">
+        <div id="exampleSlider" class="m-3">
             <div class="h1 text-center py-3 text-danger">Our Partners</div>
             <div class="MS-content">
                 <div class="item">
