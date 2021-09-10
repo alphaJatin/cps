@@ -11,20 +11,8 @@
    
    <?php include 'Header.php' ?> 
    <style>
-.container
-{
-     background:url('contact2.jpg');
-     background-size: cover;
-}
-.detail
-  {
-    color: white;
 
-  }
-  h2
-  {
-       color: white;
-  }
+
   </style>
 </head>
 
@@ -36,15 +24,6 @@
           <div class="container">
                <div class="row">
 
-<<<<<<< HEAD
-                    <div class="col-md-12 col-sm-12">
-                         <!-- SECTION TITLE -->
-                         <div class="text-center my-4" data-wow-delay="0.2s">
-                              <h2>Get in touch</h2>
-                              <p>Lorem ipsum dolor sit amet, consectetur venenatis tincidunt.</p>
-                         </div>
-                    </div>
-=======
                <div class="col-md-12 col-sm-12">
                     <!-- SECTION TITLE -->
                     <div class="text-center my-4" data-wow-delay="0.2s">
@@ -52,7 +31,6 @@
                          
                 </div>
                </div>
->>>>>>> 700c67d501fee9fb7f5cc88a0af8ff9ef4373661
 
                     <div class="col-md-7 col-sm-10">
                          <!-- CONTACT FORM HERE -->

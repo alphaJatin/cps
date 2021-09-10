@@ -13,13 +13,13 @@
           <a class="nav-link fw-bold" href="./Pages/Recruitments/recruitments.php">Drives</a>
         </li>
         <li class="nav-item px-3 py-2">
-          <a class="nav-link fw-bold" href="../Contact/Contact.php">About Us</a>
+          <a class="nav-link fw-bold" href="Contact/Contact.php">About Us</a>
         </li>
         <li class="nav-item px-3 py-2">
-          <a class="nav-link fw-bold" href="../Contact/Contact.php">Contact Us</a>
+          <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
         </li>
         <li class="nav-item px-3 py-2">
-          <a class="nav-link fw-bold" href="../../login.php">Login</a>
+          <a class="nav-link fw-bold" href="login.php">Login</a>
         </li>
       </ul>
     </div>
