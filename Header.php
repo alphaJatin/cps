@@ -10,7 +10,7 @@
           <a class="nav-link fw-bold active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item px-3 py-2">
-          <a class="nav-link fw-bold" href="../Contact/Contact.php">Drives</a>
+          <a class="nav-link fw-bold" href="./Pages/Recruitments/recruitments.php">Drives</a>
         </li>
         <li class="nav-item px-3 py-2">
           <a class="nav-link fw-bold" href="../Contact/Contact.php">About Us</a>
