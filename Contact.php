@@ -93,13 +93,8 @@
                narinder rana <br>director <br>1020304050
           </div>
      </div>
+     <?php include './Components/Footer/Footer.php'?>
      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
-<<<<<<< HEAD
-
 </html>
-=======
-</html>
-<?php include './Components/Footer/Footer.php'?>
->>>>>>> 700c67d501fee9fb7f5cc88a0af8ff9ef4373661
