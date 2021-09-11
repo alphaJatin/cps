@@ -1,19 +1,18 @@
 <?php
 $error = $email  = '';
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   session_start();
   require_once './config/db_con.php';
   $email = $_POST['email'];
   $password = $_POST['password'];
-
-  $query = "SELECT id,name,email,password FROM users where email='$email'";
+  $query = "SELECT * FROM (SELECT id,name,email,password,type FROM users union select id,name,email,password,type) u where u.email='$email'";
   $result = $con->query($query);
   if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     if ($row['password'] === $password) {
       $_SESSION['id'] = $row['id'];
       $_SESSION['loggedIn'] = true;
+      $_SESSION['type'] = $row['type'];
       exit(header("Location: ./dashboard/index.php"));
     } else $error = 'Wrong password.';
   } else $error = 'Email is not registered.';
@@ -141,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" name="login" method="post" onsubmit="return validateLogin();">
                   <div class="text-center text-danger">
-                    <h1>Log in </h1>
+                    <h1>Log in</h1>
                   </div>
                   <div class="divider d-flex align-items-center my-4">
                   </div>

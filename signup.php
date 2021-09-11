@@ -117,7 +117,7 @@
           <form action="<?php $_SERVER['PHP_SELF'] ?>" name="signup" method="post" onsubmit="return validateSignUp();">
 
             <div class="text-center text-primary .font-sansSerif">
-              <h1 class="mt-3 text-danger">Sign Up</h1>
+              <h2 class="mt-3 text-danger">Student - Sign Up</h2>
             </div>
 
             <div class="divider d-flex align-items-center my-4">
