@@ -146,7 +146,7 @@ $result = $con->query($query);
         /* ----------------------------- List Group Item ---------------------------- */
 
         .list-group {
-            height: 280px;
+            max-height: 280px;
             overflow: auto;
         }
 

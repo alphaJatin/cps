@@ -82,10 +82,10 @@
                         <a class="nav-link fw-bold " aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item px-3 py-2">
-                        <a class="nav-link fw-bold" href="about.php">About Us</a>
+                        <a class="nav-link fw-bold active" href="about.php">About Us</a>
                     </li>
                     <li class="nav-item px-3 py-2">
-                        <a class="nav-link fw-bold active" href="Contact.php">Contact Us</a>
+                        <a class="nav-link fw-bold " href="Contact.php">Contact Us</a>
                     </li>
                     <li class="nav-item px-3 py-2">
                         <a class="nav-link fw-bold" href="login.php">Login</a>
