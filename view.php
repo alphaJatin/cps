@@ -1,7 +1,7 @@
 <?php
 $i = 1;
 include './config/db_con.php';
-$q = "SELECT * FROM users";
+$q = "SELECT * FROM student";
 $result = $con->query($q);
 ?>
 

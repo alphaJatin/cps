@@ -1,3 +1,24 @@
+<?php
+include './config/db_con.php';
+if(isset($_POST['submit']))
+{
+     $name=$_POST['name'];
+     $email=$_POST['email'];
+     $msg=$_POST['message'];
+
+     $sql="INSERT INTO `query`(`name`, `email`, `message`) 
+     VALUES ('$name','$email','$msg')";
+
+     if (!$con->query($sql)) echo "Error:" . $con->error;
+     $con->close();
+
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 
 <head>
@@ -35,7 +56,7 @@
                     <div class="col-md-7 col-sm-10">
                          <!-- CONTACT FORM HERE -->
                          <div class="wow fadeInUp" data-wow-delay="0.4s">
-                              <form id="contact-form" action="#" method="get">
+                              <form id="contact-form" action="" method="POST">
                                    <div class="col-md-6 col-sm-6">
                                         <input type="text" class="form-control" name="name" placeholder="Name" required="">
                                    </div>
