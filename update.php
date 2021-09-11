@@ -3,7 +3,7 @@
   if (isset($_GET['id'])) {
     require_once './config/db_con.php';
     $id = $_GET['id'];
-    $sql = "SELECT * FROM users WHERE id = '$id';";
+    $sql = "SELECT * FROM student WHERE id = '$id';";
     $result = ($con->query($sql))->fetch_assoc();
   } else exit(header("Location: ./login.php"));
 
@@ -17,10 +17,12 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "UPDATE users SET name='$name',email='$email',department='$department',phoneNumber='$phoneNumber',password='$password',
+    $sql = "UPDATE `student` SET 'name'='$name',email='$email',department='$department',phoneNumber='$phoneNumber',password='$password',
     12th='$marks12',graduation='$graduation' WHERE id=$id";
-
-    if (!$con->query($sql)) echo "Error:" . $conn->error;
+    echo $sql;
+     $result = ($con->query($sql))->fetch_assoc();
+  
+    if (!$con->query($result)) echo "Error:" . $conn->error;
     else exit(header('location:./view.php'));
   }
 }

@@ -53,7 +53,7 @@ if (isset($_SESSION) && $_SESSION['logIn'] === true && $_SESSION['type'] === 'ad
                             </div>
                             Applied Students
                         </a>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="../view.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
                             </div>
                             View Students

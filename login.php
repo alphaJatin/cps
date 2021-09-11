@@ -5,8 +5,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   require_once './config/db_con.php';
   $email = $_POST['email'];
   $password = $_POST['password'];
-  $query = "SELECT * FROM (SELECT id,name,email,password,type FROM student union select id,name,email,password,type from admin) u where u.email='$email'";
+  $query = "SELECT * FROM (SELECT id,name,email,password,type FROM student union select id,name,email,password,type from admin) 
+  u where u.email='$email'";
+  echo $query;
   $result = $con->query($query);
+  
   if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     if ($row['password'] === $password) {
@@ -15,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $_SESSION['type'] = $row['type'];
       $_SESSION['name'] = $row['name'];
       (header("Location: ./dashboard/index.php"));
+   
     } else $error = 'Wrong password.';
   } else $error = 'Email is not registered.';
   $con->close();
@@ -139,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Sample image">
               </div>
               <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form action="<?php $_SERVER['PHP_SELF'] ?>" name="login" method="post" onsubmit="return validateLogin();">
+                <form action="<?php $_SERVER['PHP_SELF'] ?>" name="login" method="POST" onsubmit="return validateLogin();">
                   <div class="text-center text-danger">
                     <h1>Log in</h1>
                   </div>
