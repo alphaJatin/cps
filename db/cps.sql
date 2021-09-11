@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2021 at 08:47 AM
+-- Generation Time: Sep 11, 2021 at 12:03 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `id` smallint(5) UNSIGNED NOT NULL,
-  `name` varchar(100) DEFAULT NULL,
+  `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
   `type` varchar(30) NOT NULL DEFAULT 'admin'
@@ -40,7 +40,26 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `email`, `password`, `type`) VALUES
-(1, 'admin', 'admin@maimt.com', 'mobile99', 'admin');
+(1, 'Arun', 'admin@maimt.com', 'mobile99', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `applied`
+--
+
+CREATE TABLE `applied` (
+  `student_id` mediumint(8) UNSIGNED NOT NULL,
+  `company_id` mediumint(8) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `applied`
+--
+
+INSERT INTO `applied` (`student_id`, `company_id`) VALUES
+(1, 11),
+(16, 12);
 
 -- --------------------------------------------------------
 
@@ -84,10 +103,10 @@ CREATE TABLE `query` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `student`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `student` (
   `id` mediumint(8) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL,
   `department` varchar(100) NOT NULL,
@@ -100,10 +119,10 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `student`
 --
 
-INSERT INTO `users` (`id`, `name`, `department`, `phoneNumber`, `12th`, `graduation`, `email`, `password`, `type`) VALUES
+INSERT INTO `student` (`id`, `name`, `department`, `phoneNumber`, `12th`, `graduation`, `email`, `password`, `type`) VALUES
 (1, 'Avii', 'BCA', '8607316595', 124, 6544, 'arunmehra1999@gmail.com', 'mobile99', 'student'),
 (2, 'Jatin', 'BCA', '8966857965', 556, 4445, 'jatin.lal@gmail.com', 'mobile99', 'student'),
 (6, 'Avii', 'BCA', '8607316594', 245, 2444, 'arun.2222221999@gmail.com', 'mobile99', 'student'),
@@ -121,6 +140,13 @@ ALTER TABLE `admin`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indexes for table `applied`
+--
+ALTER TABLE `applied`
+  ADD PRIMARY KEY (`student_id`,`company_id`),
+  ADD KEY `company_id` (`company_id`);
+
+--
 -- Indexes for table `company`
 --
 ALTER TABLE `company`
@@ -133,9 +159,9 @@ ALTER TABLE `query`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indexes for table `student`
 --
-ALTER TABLE `users`
+ALTER TABLE `student`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `phoneNumber` (`phoneNumber`);
@@ -163,10 +189,21 @@ ALTER TABLE `query`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `student`
 --
-ALTER TABLE `users`
+ALTER TABLE `student`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `applied`
+--
+ALTER TABLE `applied`
+  ADD CONSTRAINT `applied_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
+  ADD CONSTRAINT `applied_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
