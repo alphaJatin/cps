@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (isset($_SESSION) && $_SESSION['logIn'] === true) {
+  exit(header("Location:./dashboard/index.php"));
+}
 $error = $email  = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   session_start();
