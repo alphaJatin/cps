@@ -1,4 +1,7 @@
-<?php  ?>
+<?php
+session_start();
+if (isset($_SESSION) && $_SESSION['logIn'] === true) {
+} else exit(header("Location: ../login.php")) ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +29,7 @@
 
 <body>
     <?php
-    if (1) { ?>
+    if (true) { ?>
         <!-- Page Wrapper -->
         <div id="wrapper">
 

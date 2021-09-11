@@ -5,15 +5,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   require_once './config/db_con.php';
   $email = $_POST['email'];
   $password = $_POST['password'];
-  $query = "SELECT * FROM (SELECT id,name,email,password,type FROM users union select id,name,email,password,type) u where u.email='$email'";
+  $query = "SELECT * FROM (SELECT id,name,email,password,type FROM users union select id,name,email,password,type from admin) u where u.email='$email'";
   $result = $con->query($query);
   if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     if ($row['password'] === $password) {
       $_SESSION['id'] = $row['id'];
-      $_SESSION['loggedIn'] = true;
+      $_SESSION['logIn'] = true;
       $_SESSION['type'] = $row['type'];
-      exit(header("Location: ./dashboard/index.php"));
+      (header("Location: ./dashboard/index.php"));
     } else $error = 'Wrong password.';
   } else $error = 'Email is not registered.';
   $con->close();
