@@ -14,6 +14,7 @@
           VALUES('$name','$email','$department','$contact','$username','$password','$marks','$degree')";
 
     if (!$con->query($query)) echo "Error:" . $conn->error;
+    $con->close();
   }
   ?>
 
@@ -112,7 +113,7 @@
           <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form action="" name="signup" method="post" onsubmit="return validateSignUp();">
+          <form action="<?php $_SERVER['PHP_SELF'] ?>" name="signup" method="post" onsubmit="return validateSignUp();">
 
             <div class="text-center text-primary .font-sansSerif">
               <h1 class="mt-3 text-danger">Sign Up</h1>
@@ -184,54 +185,54 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <?php include_once "./Components/Footer/Footer.php" ?>
-<script>
-	function validateSignUp() {
-	  const ERROR = document.getElementsByClassName("error-msg");
-	  const name = signup.name;
-	  const userName = signup.userName;
-	  const department = signup.department;
-	  const number = signup.number;
-	  const marks12 = signup.marks12;
-	  const degreeMarks = signup.degreeMarks;
-	  const username = signup.username;
-	  const pass = signup.password;
+    <script>
+      function validateSignUp() {
+        const ERROR = document.getElementsByClassName("error-msg");
+        const name = signup.name;
+        const userName = signup.userName;
+        const department = signup.department;
+        const number = signup.number;
+        const marks12 = signup.marks12;
+        const degreeMarks = signup.degreeMarks;
+        const username = signup.username;
+        const pass = signup.password;
 
-	  if (name.value === "" || name.validity.patternMismatch) {
-		ERROR[0].style.display = "inline-block";
-		return false;
-	  } else ERROR[0].style.display = "none";
-	  if (userName.value === "" || userName.validity.patternMismatch) {
-		ERROR[1].style.display = "inline-block";
-		return false;
-	  } else ERROR[1].style.display = "none";
-	  if (department.value === "") {
-		ERROR[2].style.display = "inline-block";
-		return false;
-	  } else ERROR[2].style.display = "none";
-	  if (number.value === "" || number.validity.patternMismatch) {
-		ERROR[3].style.display = "inline-block";
-		return false;
-	  } else ERROR[3].style.display = "none";
-	  if (marks12.value === "" || marks12.validity.patternMismatch) {
-		ERROR[4].style.display = "inline-block";
-		return false;
-	  } else ERROR[4].style.display = "none";
-	  if (degreeMarks.value === "" || degreeMarks.validity.patternMismatch) {
-		ERROR[5].style.display = "inline-block";
-		return false;
-	  } else ERROR[5].style.display = "none";
-	  if (username.value === "" || username.validity.patternMismatch) {
-		ERROR[6].style.display = "inline-block";
-		return false;
-	  } else ERROR[6].style.display = "none";
-	  if (pass.value === "" || pass.validity.patternMismatch) {
-		ERROR[7].style.display = "inline-block";
-		return false;
-	  } else ERROR[7].style.display = "none";
+        if (name.value === "" || name.validity.patternMismatch) {
+          ERROR[0].style.display = "inline-block";
+          return false;
+        } else ERROR[0].style.display = "none";
+        if (userName.value === "" || userName.validity.patternMismatch) {
+          ERROR[1].style.display = "inline-block";
+          return false;
+        } else ERROR[1].style.display = "none";
+        if (department.value === "") {
+          ERROR[2].style.display = "inline-block";
+          return false;
+        } else ERROR[2].style.display = "none";
+        if (number.value === "" || number.validity.patternMismatch) {
+          ERROR[3].style.display = "inline-block";
+          return false;
+        } else ERROR[3].style.display = "none";
+        if (marks12.value === "" || marks12.validity.patternMismatch) {
+          ERROR[4].style.display = "inline-block";
+          return false;
+        } else ERROR[4].style.display = "none";
+        if (degreeMarks.value === "" || degreeMarks.validity.patternMismatch) {
+          ERROR[5].style.display = "inline-block";
+          return false;
+        } else ERROR[5].style.display = "none";
+        if (username.value === "" || username.validity.patternMismatch) {
+          ERROR[6].style.display = "inline-block";
+          return false;
+        } else ERROR[6].style.display = "none";
+        if (pass.value === "" || pass.validity.patternMismatch) {
+          ERROR[7].style.display = "inline-block";
+          return false;
+        } else ERROR[7].style.display = "none";
 
-	  return true;
-	}
-</script>
+        return true;
+      }
+    </script>
   </body>
 
   </html>
