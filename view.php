@@ -60,6 +60,11 @@ $result = $con->query($q);
                                 <td><button><a href="delete.php" class="delete" data-toggle="tootip"><i class="material-icons">&#xE872;</i></a></button></td>
                             </tr>
                         <?php } ?>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
