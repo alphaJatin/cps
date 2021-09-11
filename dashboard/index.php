@@ -33,7 +33,7 @@ if (isset($_SESSION) && $_SESSION['logIn'] === true && $_SESSION['type'] === 'ad
     <!-- ----------------------------- Admin-Panel ----------------------------- -->
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between px-4">
-        <a class="navbar-brand ps-3" href="index.html">MAIMT PANEL</a>
+        <a class="navbar-brand ps-3" href="index.php">MAIMT PANEL</a>
         <div class="w-100 text-end">
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 " id="sidebarToggle" href="#!">
                 <i class="fas fa-bars"></i>
