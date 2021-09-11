@@ -1,19 +1,20 @@
   <?php
+  $name = $department = $phoneNumber = $marks12 = $graduation = $email = "";
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once './config/db_con.php';
     $name = $_POST['name'];
-    $email = $_POST['email'];
-    $contact = $_POST['number'];
+    $phoneNumber = $_POST['number'];
     $department = $_POST['department'];
-    $marks = $_POST['marks12'];
-    $degree = $_POST['degreeMarks'];
-    $username = $_POST['username'];
+    $marks12 = $_POST['marks12'];
+    $graduation = $_POST['graduation'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $query = "INSERT INTO login (name, email, department, contact, username, password, 12th, graduation) 
-          VALUES('$name','$email','$department','$contact','$username','$password','$marks','$degree')";
+    $query = "INSERT INTO users (name, email, department, phoneNumber, password, 12th, graduation) 
+          VALUES('$name','$email','$department','$phoneNumber','$password', $marks12, $graduation)";
 
-    if (!$con->query($query)) echo "Error:" . $conn->error;
+    if (!$con->query($query)) echo "Error:" . $con->error;
+    else exit(header("Location: ./login.php"));
     $con->close();
   }
   ?>
@@ -124,52 +125,46 @@
 
             <div class="form-outline mb-3">
               <label class="form-label" for="form3Example3">Name</label>
-              <input type="text" name="name" id="form3Example3" class="form-control form-control" placeholder=" Enter Your Full Name" pattern="[A-Za-z\s]{3,25}" minlength="3" maxlength="25" />
+              <input type="text" name="name" id="form3Example3" class="form-control form-control" placeholder=" Enter Your Full Name" pattern="[A-Za-z\s]{3,25}" minlength="3" maxlength="25" value="<?php echo $name; ?>" />
               <small class="error-msg">First name should be 3 to 10 characters long.</small>
-            </div>
-
-            <div class="form-outline mb-3">
-              <label class="form-label" for="form3Example3">Email</label>
-              <input type="email" name="email" id="form3Example3" class="form-control form-control" placeholder=" Enter Your Email" pattern="[0-9A-Za-z\._-]{3,}@[A-Za-z]{2,}\.[A-Za-z]{2,}" />
-              <small class="error-msg">Enter a valid email.</small>
             </div>
 
             <div class="form-outline mb-3">
               <label class="form-label" for="form3Example3">Department</label>
               <select class="form-control" name="department">
-                <option value="BCA" selected>BCA</option>
-                <option value="MCA">MCA</option>
-                <option value="BBA">BBA</option>
-                <option value="MBA">MBA</option>
-                <option value="OTHER">OTHER</option>
+                <option value="">Select your department</option>
+                <option value="BCA" <?php if ($department == 'BCA') echo 'selected';  ?>>BCA</option>
+                <option value="MCA" <?php if ($department == 'MCA') echo 'selected'; ?>>MCA</option>
+                <option value="BBA" <?php if ($department == 'BBA') echo 'selected'; ?>>BBA</option>
+                <option value="MBA" <?php if ($department == 'MBA') echo 'selected'; ?>>MBA</option>
+                <option value="OTHER" <?php if ($department == 'OTHER') echo 'selected'; ?>>OTHER</option>
               </select>
               <small class="error-msg">Please select a option.</small>
             </div>
 
             <div class="form-outline mb-3">
               <label class="form-label" for="form3Example3">Contact Number </label>
-              <input type="text" pattern="\d{10}" id="form3Example3" name="number" class="form-control form-control" placeholder="Enter your Contact Number" />
+              <input type="text" pattern="\d{10}" id="form3Example3" name="number" class="form-control form-control" placeholder="Enter your Contact Number" value="<?php echo $phoneNumber; ?>" />
               <small class="error-msg">Please, enter a valid phone number.</small>
             </div>
 
             <div class="form-outline mb-3">
               <label class="form-label" for="form3Example3">12th Marks</label>
-              <input type="text" name="marks12" id="form3Example3" pattern="\d{3}" class="form-control form-control" placeholder=" Enter 12th  Mark" />
+              <input type="text" value="<?php echo $marks12; ?>" name="marks12" id="form3Example3" pattern="\d{3}" class="form-control form-control" placeholder=" Enter 12th  Mark" />
               <small class="error-msg">Please enter your 12th marks.</small>
             </div>
             <div class="form-outline mb-3">
               <label class="form-label" for="form3Example3"> Graduation Marks</label>
-              <input type="text" name="degreeMarks" id="form3Example3" pattern="\d{4}" class="form-control form-control" placeholder=" Enter Graduation Marks" />
+              <input type="text" name="graduation" value="<?php echo $graduation; ?>" id="form3Example3" pattern="\d{4}" class="form-control form-control" placeholder=" Enter Graduation Marks" />
               <small class="error-msg">Please enter your graduation marks.</small>
             </div>
-            <!-- Username input -->
+
             <div class="form-outline mb-3">
-              <label class="form-label" for="form3Example3">Username</label>
-              <input type="text" id="form3Example3" name="username" class="form-control form-control" placeholder="Enter a Your Username" pattern="[a-zA-z\._-]{3,15}" />
-              <small class="error-msg">Please enter a valid username.</small>
+              <label class="form-label" for="form3Example3">Email</label>
+              <input type="email" name="email" id="form3Example3" value="<?php echo $email; ?>" class="form-control form-control" placeholder=" Enter Your Email" pattern="[0-9A-Za-z\._-]{3,}@[A-Za-z]{2,}\.[A-Za-z]{2,}" />
+              <small class="error-msg">Enter a valid email.</small>
             </div>
 
-            <!-- Password input -->
             <div class="form-outline mb-3">
               <label class="form-label" for="form3Example4">Password</label>
               <input type="password" id="form3Example4" name="password" class="form-control form-control" placeholder="Enter password" pattern=".{5,}" />
@@ -189,11 +184,11 @@
       function validateSignUp() {
         const ERROR = document.getElementsByClassName("error-msg");
         const name = signup.name;
-        const userName = signup.userName;
+        const email = signup.email;
         const department = signup.department;
         const number = signup.number;
         const marks12 = signup.marks12;
-        const degreeMarks = signup.degreeMarks;
+        const graduation = signup.graduation;
         const username = signup.username;
         const pass = signup.password;
 
@@ -201,34 +196,30 @@
           ERROR[0].style.display = "inline-block";
           return false;
         } else ERROR[0].style.display = "none";
-        if (userName.value === "" || userName.validity.patternMismatch) {
+        if (department.value === "") {
           ERROR[1].style.display = "inline-block";
           return false;
         } else ERROR[1].style.display = "none";
-        if (department.value === "") {
+        if (number.value === "" || number.validity.patternMismatch) {
           ERROR[2].style.display = "inline-block";
           return false;
         } else ERROR[2].style.display = "none";
-        if (number.value === "" || number.validity.patternMismatch) {
+        if (marks12.value === "" || marks12.validity.patternMismatch) {
           ERROR[3].style.display = "inline-block";
           return false;
         } else ERROR[3].style.display = "none";
-        if (marks12.value === "" || marks12.validity.patternMismatch) {
+        if (graduation.value === "" || graduation.validity.patternMismatch) {
           ERROR[4].style.display = "inline-block";
           return false;
         } else ERROR[4].style.display = "none";
-        if (degreeMarks.value === "" || degreeMarks.validity.patternMismatch) {
+        if (email.value === "" || email.validity.patternMismatch) {
           ERROR[5].style.display = "inline-block";
           return false;
         } else ERROR[5].style.display = "none";
-        if (username.value === "" || username.validity.patternMismatch) {
+        if (pass.value === "" || pass.validity.patternMismatch) {
           ERROR[6].style.display = "inline-block";
           return false;
         } else ERROR[6].style.display = "none";
-        if (pass.value === "" || pass.validity.patternMismatch) {
-          ERROR[7].style.display = "inline-block";
-          return false;
-        } else ERROR[7].style.display = "none";
 
         return true;
       }

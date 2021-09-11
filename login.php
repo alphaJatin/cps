@@ -1,3 +1,26 @@
+<?php
+$error = $email  = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  session_start();
+  require_once './config/db_con.php';
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  $query = "SELECT id,name,email,password FROM users where email='$email'";
+  $result = $con->query($query);
+  if ($result->num_rows == 1) {
+    $row = $result->fetch_assoc();
+    if ($row['password'] === $password) {
+      $_SESSION['id'] = $row['id'];
+      $_SESSION['loggedIn'] = true;
+      exit(header("Location: ./dashboard/index.php"));
+    } else $error = 'Wrong password.';
+  } else $error = 'Email is not registered.';
+  $con->close();
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -9,10 +32,10 @@
   <script>
     function validateLogin() {
       const ERROR = document.getElementsByClassName("error-msg");
-      const userName = login.userName;
+      const email = login.email;
       const pass = login.password;
 
-      if (userName.value === "" || userName.validity.patternMismatch) {
+      if (email.value === "" || email.validity.patternMismatch) {
         ERROR[0].style.display = "inline-block";
         return false;
       } else ERROR[0].style.display = "none";
@@ -116,7 +139,7 @@
                 <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Sample image">
               </div>
               <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form action="#" name="login" method="post" onsubmit="return validateLogin();">
+                <form action="<?php $_SERVER['PHP_SELF'] ?>" name="login" method="post" onsubmit="return validateLogin();">
                   <div class="text-center text-danger">
                     <h1>Log in </h1>
                   </div>
@@ -125,9 +148,9 @@
 
                   <!-- Email input -->
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example3">Username</label>
-                    <input type="text" id="form3Example3" class="form-control form-control" placeholder="Enter a Your Username" name="userName" pattern="[a-zA-z\._-]{3,15}" />
-                    <small class="error-msg">Please enter your username.</small>
+                    <label class="form-label" for="form3Example3">Email</label>
+                    <input type="text" id="form3Example3" class="form-control form-control" placeholder="Enter a Your email" name="email" pattern="[0-9A-Za-z\._-]{3,}@[A-Za-z]{2,}\.[A-Za-z]{2,}" value="<?php echo $email ?>" />
+                    <small class="error-msg">Please enter your email.</small>
                   </div>
 
                   <!-- Password input -->
@@ -148,6 +171,7 @@
                     <a href="recover.php" class="text-body">Forgot password?</a>
                   </div>
 
+                  <small class="error-msg w-100 d-block text-center pt-2"><?php echo $error ?></small>
                   <div class="text-center text-center mt-4 pt-2">
                     <input type="submit" class="btn btn-danger btn-md" value="LOGIN" style="padding-left: 2.5rem; padding-right: 2.5rem;" />
                     <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="signup.php" class="link-danger">Register</a></p>
