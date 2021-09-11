@@ -10,7 +10,7 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $query = "INSERT INTO users (name, email, department, phoneNumber, password, 12th, graduation) 
+    $query = "INSERT INTO student (name, email, department, phoneNumber, password, 12th, graduation) 
           VALUES('$name','$email','$department','$phoneNumber','$password', $marks12, $graduation)";
 
     if (!$con->query($query)) echo "Error:" . $con->error;
