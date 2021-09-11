@@ -1,29 +1,30 @@
-<?php {
-  session_start();
-  if (isset($_GET['id'])) {
-    require_once './config/db_con.php';
-    $id = $_GET['id'];
-    $sql = "SELECT * FROM users WHERE id = '$id';";
-    $result = ($con->query($sql))->fetch_assoc();
-  } else exit(header("Location: ./login.php"));
+<!-- #delete post block varibles -->
 
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once './config/db_con.php';
-    $name = $_POST['name'];
-    $phoneNumber = $_POST['number'];
-    $department = $_POST['department'];
-    $marks12 = $_POST['marks12'];
-    $graduation = $_POST['graduation'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $sql = "UPDATE users SET name='$name',email='$email',department='$department',phoneNumber='$phoneNumber',password='$password',
-    12th='$marks12',graduation='$graduation' WHERE id=$id";
-
-    if (!$con->query($sql)) echo "Error:" . $conn->error;
-    else exit(header('location:./view.php'));
+<?php
+session_start();
+if (isset($_GET['id']) && $_SESSION['type'] == 'admin') {
+  require_once './config/db_con.php';
+  $id = $_GET['id'];
+  $sql = "SELECT * FROM student WHERE id = '$id';";
+  $result = ($con->query($sql))->fetch_assoc();
+  $con->close();
+} else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  require_once './config/db_con.php';
+  $name = $_POST['name'];
+  $phoneNumber = $_POST['number'];
+  $department = $_POST['department'];
+  $marks12 = $_POST['marks12'];
+  $graduation = $_POST['graduation'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $sql = "UPDATE users SET name='$name', email='$email', department='$department', phoneNumber='$phoneNumber', password='$password',
+    12th='$marks12', graduation='$graduation' WHERE id=$id";
+  if (!$con->query($sql)) echo "Error:" . $conn->error;
+  else {
+    $con->close();
+    exit(header('location:./view.php'));
   }
-}
+} else exit(header("Location: ./login.php"));
 ?>
 
 <!doctype html>
