@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2021 at 07:03 AM
+-- Generation Time: Sep 11, 2021 at 08:28 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `cps`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` smallint(5) UNSIGNED NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `type` varchar(30) NOT NULL DEFAULT 'admin'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -69,27 +83,35 @@ CREATE TABLE `query` (
 CREATE TABLE `users` (
   `id` mediumint(8) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
   `department` varchar(100) NOT NULL,
   `phoneNumber` varchar(20) NOT NULL,
-  `password` varchar(30) NOT NULL,
   `12th` smallint(5) UNSIGNED NOT NULL,
-  `graduation` smallint(5) UNSIGNED NOT NULL
+  `graduation` smallint(5) UNSIGNED NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `type` varchar(30) NOT NULL DEFAULT 'student'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `department`, `phoneNumber`, `password`, `12th`, `graduation`) VALUES
-(1, 'Avii', 'arunmehra1999@gmail.com', 'BCA', '8607316595', 'mobile99', 124, 6544),
-(2, 'Jatin', 'jatin.lal@gmail.com', 'BCA', '8966857965', 'mobile99', 556, 4445),
-(6, 'Avii', 'arun.2222221999@gmail.com', 'BCA', '8607316594', 'mobile99', 245, 2444),
-(16, 'Loki', 'arun.2222233321999@gmail.com', 'MCA', '8607316555', 'mobile99', 234, 4445);
+INSERT INTO `users` (`id`, `name`, `department`, `phoneNumber`, `12th`, `graduation`, `email`, `password`, `type`) VALUES
+(1, 'Avii', 'BCA', '8607316595', 124, 6544, 'arunmehra1999@gmail.com', 'mobile99', 'student'),
+(2, 'Jatin', 'BCA', '8966857965', 556, 4445, 'jatin.lal@gmail.com', 'mobile99', 'student'),
+(6, 'Avii', 'BCA', '8607316594', 245, 2444, 'arun.2222221999@gmail.com', 'mobile99', 'student'),
+(16, 'Loki', 'BBA', '8607316555', 234, 4445, 'arun.2222233321999@gmail.com', 'mobile999', 'student');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `company`
@@ -114,6 +136,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `company`

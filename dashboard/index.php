@@ -25,10 +25,7 @@
 
 <body>
     <?php
-    if (1) {
-
-
-    ?>
+    if (1) { ?>
         <!-- Page Wrapper -->
         <div id="wrapper">
 
@@ -57,9 +54,7 @@
                 <hr class="sidebar-divider">
 
                 <!-- Heading -->
-                <div class="sidebar-heading">
-                    Interface
-                </div>
+                <div class="sidebar-heading"> Interface </div>
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -196,12 +191,9 @@
                                                 <th>Name</th>
                                                 <th>Description</th>
                                                 <th>type</th>
-
                                                 <th>Uploaded By</th>
                                                 <th>Uploaded on</th>
-
                                                 <th>Download</th>
-
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -210,17 +202,10 @@
                                                 <th></th>
                                                 <th></th>
                                                 <th></th>
-
                                                 <th></th>
                                                 <th></th>
-
                                                 <th></th>
-
-
-
                                             </tr>
-
-
                                         </tbody>
 
                                     </table>
@@ -272,7 +257,7 @@
                                     <div class="sidebar-brand-icon rotate-n-15">
                                         <i class="fas fa-shield-alt"></i>
                                     </div>
-                                    <div class="sidebar-brand-text mx-3">MAIMT </div>
+                                    <div class="sidebar-brand-text mx-3">MAIMT</div>
                                 </a>
 
                                 <!-- Divider -->
@@ -484,9 +469,7 @@
                                         <script src="js/demo/chart-area-demo.js"></script>
                                         <script src="js/demo/chart-pie-demo.js"></script>
 
-                                    <?php
-                                }
-                                    ?>
+                                    <?php } ?>
 </body>
 
 </html>
