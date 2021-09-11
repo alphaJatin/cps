@@ -1,8 +1,8 @@
 <?php {
   session_start();
-  if (isset($_SESSION['id'])) {
+  if (isset($_GET['id'])) {
     require_once './config/db_con.php';
-    $id = $_SESSION['id'];
+    $id = $_GET['id'];
     $sql = "SELECT * FROM users WHERE id = '$id';";
     $result = ($con->query($sql))->fetch_assoc();
   } else exit(header("Location: ./login.php"));
@@ -21,7 +21,7 @@
     12th='$marks12',graduation='$graduation' WHERE id=$id";
 
     if (!$con->query($sql)) echo "Error:" . $conn->error;
-    else exit(header('location:view.php'));
+    else exit(header('location:./view.php'));
   }
 }
 ?>
@@ -173,7 +173,7 @@
 
           <div class="form-outline mb-3">
             <label class="form-label" for="form3Example4">Password</label>
-            <input type="password" id="form3Example4" name="password" class="form-control form-control" placeholder="Enter password" pattern=".{5,}" />
+            <input type="password" id="form3Example4" name="password" class="form-control form-control" placeholder="Enter password" pattern=".{5,}" value="<?php echo $result["password"] ?>" />
             <small class="error-msg">Password should be minimum 5 character long.</small>
           </div>
 
