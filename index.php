@@ -9,227 +9,40 @@ $result = $con->query($query);
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
     <script src="https://kit.fontawesome.com/1422ef591f.js" crossorigin="anonymous"></script>
 
     <title>Placement Managment System</title>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;1,200;1,400&display=swap");
-
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: "Poppins", sans-serif;
-        }
-
-        body,
-        html {
-            height: 100%;
-        }
-
-        html h1 {
-            text-align: center;
-        }
-
-        html h2 {
-            text-align: center;
-            color: grey;
-        }
-
-        #exampleSlider {
-            position: relative;
-            border: 1px solid lightgrey;
-            border-radius: 12px;
-        }
-
-        @media (max-width: 767px) {
-            #exampleSlider {
-                border-color: transparent;
-            }
-        }
-
-        #exampleSlider .MS-content {
-            margin: 15px 5%;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        @media (max-width: 767px) {
-            #exampleSlider .MS-content {
-                margin: 0;
-            }
-        }
-
-        #exampleSlider .MS-content .item {
-            display: inline-block;
-            height: 100%;
-            overflow: hidden;
-            position: relative;
-            vertical-align: top;
-            /* border: 1px solid green; */
-            border-right: none;
-            width: 20%;
-        }
-
-        @media (max-width: 1200px) {
-            #exampleSlider .MS-content .item {
-                width: 25%;
-            }
-        }
-
-        @media (max-width: 992px) {
-            #exampleSlider .MS-content .item {
-                width: 33.3333%;
-            }
-        }
-
-        @media (max-width: 767px) {
-            #exampleSlider .MS-content .item {
-                width: 50%;
-            }
-        }
-
-        #exampleSlider .MS-content .item p {
-            font-size: 30px;
-            text-align: center;
-            line-height: 1;
-            vertical-align: middle;
-            margin: 0;
-            padding: 10px 0;
-        }
-
-        #exampleSlider .MS-controls button {
-            position: absolute;
-            border: none;
-            background: transparent;
-            font-size: 30px;
-            outline: 0;
-            top: 35px;
-        }
-
-        @media (max-width: 767px) {
-            #exampleSlider .MS-controls button {
-                display: none;
-            }
-        }
-
-        #exampleSlider .MS-controls button:hover {
-            cursor: pointer;
-        }
-
-        #exampleSlider .MS-controls .MS-left {
-            left: 30px;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        @media (max-width: 992px) {
-            #exampleSlider .MS-controls .MS-left {
-                left: -2px;
-            }
-        }
-
-        #exampleSlider .MS-controls .MS-right {
-            right: 30px;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        @media (max-width: 992px) {
-            #exampleSlider .MS-controls .MS-right {
-                right: -2px;
-            }
-        }
-
-        /* ----------------------------- List Group Item ---------------------------- */
-
-        .list-group {
-            max-height: 280px;
-            overflow: auto;
-        }
-
-        .list-group .list-group-item {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .text-style {
-            letter-spacing: 2px;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .btn-style {
-                outline: none;
-                background-color: #dc3545;
-                border-color: #dc3545;
-            }
-        }
-
-
-        .hero-image {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./banner.jpg");
-            height: 80%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
-
-        .hero-text {
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-        }
-
-        .button {
-            border: none;
-            text-align: center;
-            transition: all 0.5s;
-            cursor: pointer;
-        }
-
-        .button span {
-            cursor: pointer;
-            display: inline-block;
-            position: relative;
-            transition: 0.5s;
-        }
-
-        .button span:after {
-            content: '\00bb';
-            position: absolute;
-            opacity: 0;
-            top: 0;
-            right: -20px;
-            transition: 0.5s;
-        }
-
-        .button:hover span {
-            padding-right: 25px;
-        }
-
-        .button:hover span:after {
-            opacity: 1;
-            right: 0;
-        }
-
-        .nav-item a:hover {
-            color: #dc3545 !important;
-        }
-
-        .active {
-            color: #dc3545 !important;
-        }
-    </style>
 </head>
 
 <body>
-    <?php include_once "./Header.php"; ?>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand px-4" href="./index.php"><img src="./logo.png" alt="MAIMT" width="50px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-evenly">
+                    <li class="nav-item px-3 py-2">
+                        <a class="nav-link fw-bold active" aria-current="page" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item px-3 py-2">
+                        <a class="nav-link fw-bold" href="about.php">About Us</a>
+                    </li>
+                    <li class="nav-item px-3 py-2">
+                        <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
+                    </li>
+                    <li class="nav-item px-3 py-2">
+                        <a class="nav-link fw-bold" href="login.php">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="hero-image">
         <div class="hero-text">
@@ -262,22 +75,22 @@ $result = $con->query($query);
             <div class="h1 text-center py-3 text-danger">Our Partners</div>
             <div class="MS-content">
                 <div class="item">
-                    <img src="./pages/Recruitments/img/debut_infotech.png" alt="c1">
+                    <img src="./img/slider/debut_infotech.png" alt="c1">
                 </div>
                 <div class="item">
-                    <img src="./pages/Recruitments/img/ashriya_infotech.png" alt="">
+                    <img src="./img/slider/ashriya_infotech.png" alt="">
                 </div>
                 <div class="item">
-                    <img src="./pages/Recruitments/img/tcs.png" alt="">
+                    <img src="./img/slider/tcs.png" alt="">
                 </div>
                 <div class="item">
-                    <img src="./pages/Recruitments/img/ashriya_infotech.png" alt="">
+                    <img src="./img/slider/ashriya_infotech.png" alt="">
                 </div>
                 <div class="item">
-                    <img src="./pages/Recruitments/img/tcs.png" alt="">
+                    <img src="./img/slider/tcs.png" alt="">
                 </div>
                 <div class="item">
-                    <img src="./pages/Recruitments/img/debut_infotech.png" alt="">
+                    <img src="./img/slider/debut_infotech.png" alt="">
                 </div>
             </div>
             <div class="MS-controls">
@@ -286,15 +99,14 @@ $result = $con->query($query);
             </div>
         </div>
     </div>
-    <!-- Include jQuery -->
+    </div>
+
     <?php include_once 'Components/Footer/Footer.php' ?>
-    <!-- <script src="js/jquery-2.2.4.min.js"></script> -->
-    <script src="./pages/Recruitments/js/jquery-2.2.4.min.js"></script>
 
-    <!-- Include Multislider -->
-    <script src="./pages/Recruitments/js/multislider.min.js"></script>
+    <script src="./js/jquery-2.2.4.min.js"></script>
 
-    <!-- Initialize element with Multislider -->
+    <script src="./js/multislider.min.js"></script>
+
     <script>
         $('#exampleSlider').multislider({
             interval: 4000,
@@ -302,8 +114,6 @@ $result = $con->query($query);
             duration: 1500
         });
     </script>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
