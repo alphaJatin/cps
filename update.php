@@ -1,5 +1,4 @@
 <!-- #delete post block varibles -->
-
 <?php
 session_start();
 if (isset($_GET['id']) && $_SESSION['type'] == 'admin') {
