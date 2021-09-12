@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2021 at 12:03 PM
+-- Generation Time: Sep 12, 2021 at 05:29 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -124,9 +124,8 @@ CREATE TABLE `student` (
 
 INSERT INTO `student` (`id`, `name`, `department`, `phoneNumber`, `12th`, `graduation`, `email`, `password`, `type`) VALUES
 (1, 'Avii', 'BCA', '8607316595', 124, 6544, 'arunmehra1999@gmail.com', 'mobile99', 'student'),
-(2, 'Jatin', 'BCA', '8966857965', 556, 4445, 'jatin.lal@gmail.com', 'mobile99', 'student'),
-(6, 'Avii', 'BCA', '8607316594', 245, 2444, 'arun.2222221999@gmail.com', 'mobile99', 'student'),
-(16, 'Loki', 'BBA', '8607316555', 234, 4445, 'arun.2222233321999@gmail.com', 'mobile999', 'student');
+(16, 'kamal', 'MCA', '8607316555', 888, 5433, 'kamal@maimt.com', 'test55', 'student'),
+(17, 'Jatin', 'BBA', '8607316554', 999, 8933, 'mobile@gmail.com', 'mobile99', 'student');
 
 --
 -- Indexes for dumped tables
@@ -192,7 +191,7 @@ ALTER TABLE `query`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
