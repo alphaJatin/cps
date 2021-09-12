@@ -3,7 +3,6 @@ session_start();
 if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
     require_once '../../config/db_con.php';
     $id = $_SESSION['id'];
-    $name = $_SESSION['name'];
     $q = "SELECT * FROM company order by date desc";
     $result = $con->query($q);
     $con->close();
@@ -27,6 +26,10 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
         td {
             text-align: center !important;
         }
+
+        .row>* {
+            padding: 0 !important;
+        }
     </style>
 </head>
 
@@ -49,18 +52,18 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">MENU</div>
-                        <a class="nav-link bg-light text-dark" href="index.html">
-                            <div class="sb-nav-link-icon text-dark"><i class="fas fa-check"></i>
+                        <a class="nav-link " href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-check"></i>
                             </div>
                             Applied Company
                         </a>
-                        <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
+                        <a class="nav-link bg-light text-dark" href="#">
+                            <div class="sb-nav-link-icon text-dark"><i class="fas fa-building"></i>
                             </div>
                             View Company
                         </a>
                         <a class="nav-link" href="./edit.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-building"></i>
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
                             </div>
                             Edit Profile
                         </a>
@@ -70,28 +73,37 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4">
-                    <h1 class="my-4">Applied</h1>
-                    <div class="accordion" id="accordionExample">
-                        <?php while ($row = $result->fetch_assoc()) {
-                            # code...
-                        } ?>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <div class="container-fluid px-4 row">
+                    <h2 class="my-4">Latest Recruiters</h2>
+                    <?php while ($row = $result->fetch_assoc()) { ?>
+
+                        <div class="col-md-6 col-lg-4 card mb-4 ">
+                            <div class="card-header fs-5 fw-bold text-center">
+                                <?php echo $row['name']; ?>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-6 fs-6">
+                                        <span class="text-primary" style="font-weight: 500;">Location:</span> <?php echo $row['location']; ?>
+                                    </div>
+                                    <div class="col-md-6 fs-6">
+                                        <span class="text-primary" style="font-weight: 500;">Package:</span> <?php echo $row['package']; ?>
+                                    </div>
+                                    <div class="col-md-12 fs-6">
+                                        <span class="text-primary" style="font-weight: 500;">Coming Date:</span> <?php echo $row['date'] ?>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <a href="#" class="btn btn-dark">Apply Now</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php } ?>
                 </div>
-            </main>
-
         </div>
+        </main>
+
+    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
