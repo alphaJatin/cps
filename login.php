@@ -1,15 +1,22 @@
 <?php
+session_start();
+if (isset($_SESSION['logIn']) && $_SESSION['logIn'] === true) {
+  exit(header("Location:./dashboard/"));
+}
 $error = $email  = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  session_start();
   require_once './config/db_con.php';
   $email = $_POST['email'];
   $password = $_POST['password'];
-  $query = "SELECT * FROM (SELECT id,name,email,password,type FROM student union select id,name,email,password,type from admin) 
-  u where u.email='$email'";
-  echo $query;
-  $result = $con->query($query);
-  
+
+  $q = "SELECT * FROM 
+  ( SELECT id, name, email, password, type FROM student 
+   UNION
+   SELECT id, name, email, password, type FROM admin ) u 
+   WHERE u.email='$email';";
+
+  $result = $con->query($q);
+
   if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     if ($row['password'] === $password) {
@@ -17,11 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $_SESSION['logIn'] = true;
       $_SESSION['type'] = $row['type'];
       $_SESSION['name'] = $row['name'];
-      (header("Location: ./dashboard/index.php"));
-   
+      $con->close();
+      if ($_SESSION['type'] === 'student')
+        exit(header("Location: ./index.php"));
+      else
+        exit(header("Location: ./dashboard/admin/"));
     } else $error = 'Wrong password.';
   } else $error = 'Email is not registered.';
-  $con->close();
 }
 ?>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2021 at 12:03 PM
+-- Generation Time: Sep 12, 2021 at 06:03 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -11,14 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
--- Database: `cps`
+-- Database: `pms`
 --
 
 -- --------------------------------------------------------
@@ -52,14 +46,6 @@ CREATE TABLE `applied` (
   `student_id` mediumint(8) UNSIGNED NOT NULL,
   `company_id` mediumint(8) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `applied`
---
-
-INSERT INTO `applied` (`student_id`, `company_id`) VALUES
-(1, 11),
-(16, 12);
 
 -- --------------------------------------------------------
 
@@ -117,16 +103,6 @@ CREATE TABLE `student` (
   `password` varchar(30) NOT NULL,
   `type` varchar(30) NOT NULL DEFAULT 'student'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `student`
---
-
-INSERT INTO `student` (`id`, `name`, `department`, `phoneNumber`, `12th`, `graduation`, `email`, `password`, `type`) VALUES
-(1, 'Avii', 'BCA', '8607316595', 124, 6544, 'arunmehra1999@gmail.com', 'mobile99', 'student'),
-(2, 'Jatin', 'BCA', '8966857965', 556, 4445, 'jatin.lal@gmail.com', 'mobile99', 'student'),
-(6, 'Avii', 'BCA', '8607316594', 245, 2444, 'arun.2222221999@gmail.com', 'mobile99', 'student'),
-(16, 'Loki', 'BBA', '8607316555', 234, 4445, 'arun.2222233321999@gmail.com', 'mobile999', 'student');
 
 --
 -- Indexes for dumped tables
@@ -192,7 +168,7 @@ ALTER TABLE `query`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
@@ -202,10 +178,7 @@ ALTER TABLE `student`
 -- Constraints for table `applied`
 --
 ALTER TABLE `applied`
-  ADD CONSTRAINT `applied_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
-  ADD CONSTRAINT `applied_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`);
+  ADD CONSTRAINT `applied_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `applied_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

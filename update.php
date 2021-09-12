@@ -1,14 +1,17 @@
 <!-- #delete post block varibles -->
 <?php
 session_start();
-if (isset($_GET['id']) && $_SESSION['type'] == 'admin') {
+if (isset($_GET['id']) && $_SESSION['type'] == 'admin' && $_SERVER['REQUEST_METHOD'] === 'GET') {
   require_once './config/db_con.php';
-  $id = $_GET['id'];
+  $id = $_SESSION['uid'] = $_GET['id'];
   $sql = "SELECT * FROM student WHERE id = '$id';";
   $result = ($con->query($sql))->fetch_assoc();
   $con->close();
 } else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   require_once './config/db_con.php';
+  $id = $_SESSION['uid'];
+  unset($_SESSION['uid']);
+  echo $id;
   $name = $_POST['name'];
   $phoneNumber = $_POST['number'];
   $department = $_POST['department'];
@@ -16,13 +19,10 @@ if (isset($_GET['id']) && $_SESSION['type'] == 'admin') {
   $graduation = $_POST['graduation'];
   $email = $_POST['email'];
   $password = $_POST['password'];
-  $sql = "UPDATE student SET name='$name', email='$email', department='$department', phoneNumber='$phoneNumber', password='$password',
-    12th='$marks12', graduation='$graduation' WHERE id=$id";
-  if (!$con->query($sql)) echo "Error:" . $con->error;
-  else {
-    $con->close();
-    exit(header('location:./view.php'));
-  }
+  $sql = "UPDATE student SET name='$name', department='$department', phoneNumber='$phoneNumber',
+    12th=$marks12, graduation=$graduation, email='$email', password='$password' WHERE id=$id";
+  if (!$con->query($sql)) exit(print "Error:" . $con->error);
+  else exit(header('location:./view.php'));
 } else exit(header("Location: ./login.php"));
 ?>
 
@@ -84,7 +84,7 @@ if (isset($_GET['id']) && $_SESSION['type'] == 'admin') {
     }
   </style>
 
-  <title>update Page</title>
+  <title>Update Student</title>
 </head>
 
 <body>
@@ -120,7 +120,7 @@ if (isset($_GET['id']) && $_SESSION['type'] == 'admin') {
         <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form action="<?php $_SERVER['PHP_SELF'] ?>" name="update" method="post" onsubmit="return validateUpdate();">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" name="update" method="POST" onsubmit="return validateUpdate();">
 
           <div class="text-center text-primary .font-sansSerif">
             <h1 class="mt-3 text-danger">Update Information</h1>
