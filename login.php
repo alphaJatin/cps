@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['logIn']) && $_SESSION['logIn'] === true) {
-  exit(header("Location:./dashboard/index.php"));
+  exit(header("Location:./dashboard/"));
 }
 $error = $email  = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $_SESSION['type'] = $row['type'];
       $_SESSION['name'] = $row['name'];
       $con->close();
-      exit(header("Location: ./dashboard/index.php"));
+      exit(header("Location: ./dashboard/admin/"));
     } else $error = 'Wrong password.';
   } else $error = 'Email is not registered.';
 }

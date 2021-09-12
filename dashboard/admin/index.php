@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION) && $_SESSION['logIn'] === true && $_SESSION['type'] === 'admin') {
-    require_once '../config/db_con.php';
+    require_once '../../config/db_con.php';
     $id = $_SESSION['id'];
     $name = $_SESSION['name'];
     $query = "SELECT s.name sname, s.department, s.12th, s.graduation, s.email, c.name cname FROM student s JOIN applied a ON s.id = a.student_id JOIN company c ON a.company_id = c.id;";
@@ -34,12 +34,12 @@ if (isset($_SESSION) && $_SESSION['logIn'] === true && $_SESSION['type'] === 'ad
     <!-- ----------------------------- Admin-Panel ----------------------------- -->
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between px-4">
-        <a class="navbar-brand ps-3" href="../index.php">MAIMT</a>
+        <a class="navbar-brand ps-3" href="../../index.php">MAIMT</a>
         <div class="w-100 text-end">
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 " id="sidebarToggle" href="#!">
                 <i class="fas fa-bars"></i>
             </button>
-            <a class="text-decoration-none text-light" href="../logout.php">Logout</a>
+            <a class="text-decoration-none text-light" href="../../logout.php">Logout</a>
         </div>
     </nav>
     <div id="layoutSidenav">

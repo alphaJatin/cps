@@ -1,4 +1,6 @@
-<?php require_once "./config/db_con.php";
+<?php
+session_start();
+require_once "./config/db_con.php";
 $query = "SELECT name from company";
 $result = $con->query($query);
 ?>
@@ -37,7 +39,12 @@ $result = $con->query($query);
                         <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
                     </li>
                     <li class="nav-item px-3 py-2">
-                        <a class="nav-link fw-bold" href="login.php">Login</a>
+                        <?php if (isset($_SESSION['logIn']) && $_SESSION['logIn'] === true) { ?>
+                            <a class="nav-link fw-bold" href="./dashboard/<?php echo ($_SESSION['type'] === "admin") ? "admin/" : "student/"; ?>">Dashboard</a>
+                        <?php } else {  ?>
+                            <a class="nav-link fw-bold" href="./login.php">Login</a>
+                        <?php } ?>
+
                     </li>
                 </ul>
             </div>
