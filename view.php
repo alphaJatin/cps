@@ -57,7 +57,7 @@ $result = $con->query($q);
                                 <td><?php echo $row['12th']; ?></td>
                                 <td><?php echo $row['graduation']; ?></td>
                                 <td><a href="update.php?id=<?php echo  $row['id']; ?>" class="view" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a></td>
-                                <td><button><a href="delete.php" class="delete" data-toggle="tootip"><i class="material-icons">&#xE872;</i></a></button></td>
+                                <td><button><a href="./delete.php?id=<?php echo $row['id']; ?>" class="delete" data-toggle="tootip"><i class="material-icons">&#xE872;</i></a></button></td>
                             </tr>
                         <?php } ?>
                     </table>
