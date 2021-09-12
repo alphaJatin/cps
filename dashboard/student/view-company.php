@@ -4,7 +4,7 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
     require_once '../../config/db_con.php';
     $id = $_SESSION['id'];
     $name = $_SESSION['name'];
-    $q = "SELECT c.name as cname, a.date adate FROM student s JOIN applied a ON s.id=a.student_id AND s.id=$id JOIN company c on a.company_id=c.id";
+    $q = "SELECT * FROM company order by date desc";
     $result = $con->query($q);
     $con->close();
 } else exit(header("Location: ../../login.php")); ?>
@@ -26,10 +26,6 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
         th,
         td {
             text-align: center !important;
-        }
-
-        #remove a:hover {
-            color: black !important;
         }
     </style>
 </head>
@@ -76,64 +72,29 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="my-4">Applied</h1>
-                    <div class="card mb-4">
-                        <!-- <div class="card-header"> <i class="fas fa-table me-1"></i> Students </div> -->
-                        <div class="card-body">
-                            <table id="datatablesSimple">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Compnay Name</th>
-                                        <th>Applied Date</td>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php $i = 1;
-                                    while ($row = $result->fetch_assoc()) { ?>
-                                        <tr>
-                                            <td><?php echo $i++ ?></td>
-                                            <td><?php echo $row['cname']; ?> </td>
-                                            <td><?php echo $row['adate']; ?></td>
-                                            <td id="remove"><a class="text-decoration-none text-danger fw-bold" href="#">Remove</a></td>
-                                        </tr>
-                                    <?php } ?>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Department</th>
-                                        <th>12th Marks</th>
-                                        <th>Graduation</th>
-                                        <th>Email</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
+                    <div class="accordion" id="accordionExample">
+                        <?php while ($row = $result->fetch_assoc()) {
+                            # code...
+                        } ?>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="js/datatables-simple-demo.js"></script>
 </body>
 
 </html>
