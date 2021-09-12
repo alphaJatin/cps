@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once "../config/db_con.php";
+    require_once "../../config/db_con.php";
     $name = $_POST['name'];
     $package = $_POST['package'];
     $location = $_POST['location'];
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .rec-title {
             font-family: sans-serif;
             letter-spacing: 1px;
-            font-weight: 600;            
+            font-weight: 600;
         }
 
         input:valid {
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- ----------------------------- Admin-Panel ----------------------------- -->
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between px-4">
-        <a class="navbar-brand ps-3" href="index.php">MAIMT PANEL</a>
+        <a class="navbar-brand ps-3" href="../../index.php">M A I M T</a>
         <div class="w-100 text-end">
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 " id="sidebarToggle" href="#!">
                 <i class="fas fa-bars"></i>
