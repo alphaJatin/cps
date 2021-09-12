@@ -38,14 +38,19 @@ $result = $con->query($query);
                     <li class="nav-item px-3 py-2">
                         <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
                     </li>
-                    <li class="nav-item px-3 py-2">
-                        <?php if (isset($_SESSION['logIn']) && $_SESSION['logIn'] === true) { ?>
+                    <?php if (isset($_SESSION['logIn']) && $_SESSION['logIn'] === true) { ?>
+                        <li class="nav-item px-3 py-2">
                             <a class="nav-link fw-bold" href="./dashboard/<?php echo ($_SESSION['type'] === "admin") ? "admin/" : "student/"; ?>">Dashboard</a>
-                        <?php } else {  ?>
+                        </li>
+                        <li class="nav-item px-3 py-2">
+                            <a class="nav-link fw-bold" href="./logout.php">Logout</a>
+                        </li>
+                    <?php } else {  ?>
+                        <li class="nav-item px-3 py-2">
                             <a class="nav-link fw-bold" href="./login.php">Login</a>
-                        <?php } ?>
+                        </li>
+                    <?php } ?>
 
-                    </li>
                 </ul>
             </div>
         </div>

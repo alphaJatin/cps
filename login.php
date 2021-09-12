@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   require_once './config/db_con.php';
   $email = $_POST['email'];
   $password = $_POST['password'];
-  
+
   $q = "SELECT * FROM 
   ( SELECT id, name, email, password, type FROM student 
    UNION
@@ -25,7 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $_SESSION['type'] = $row['type'];
       $_SESSION['name'] = $row['name'];
       $con->close();
-      exit(header("Location: ./dashboard/admin/"));
+      if ($_SESSION['type'] === 'student')
+        exit(header("Location: ./index.php"));
+      else
+        exit(header("Location: ./dashboard/admin/"));
     } else $error = 'Wrong password.';
   } else $error = 'Email is not registered.';
 }

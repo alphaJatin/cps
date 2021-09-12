@@ -47,18 +47,25 @@ $result = $con->query($q);
                                 <th colspan="2" class="text-center">Action</th>
                             </tr>
                         </thead>
-                        <?php while ($row = $result->fetch_assoc()) { ?>
-                            <tr>
-                                <td><?php echo $i++; ?></td>
-                                <td><?php echo $row['name']; ?></td>
-                                <td><?php echo $row['email']; ?></td>
-                                <td><?php echo $row['department']; ?></td>
-                                <td><?php echo $row['phoneNumber']; ?></td>
-                                <td><?php echo $row['12th']; ?></td>
-                                <td><?php echo $row['graduation']; ?></td>
-                                <td><a href="update.php?id=<?php echo  $row['id']; ?>" class="view" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a></td>
-                                <td><button><a href="./delete.php?id=<?php echo $row['id']; ?>" class="delete" data-toggle="tootip"><i class="material-icons">&#xE872;</i></a></button></td>
-                            </tr>
+
+                        <?php if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) { ?>
+                                <tr>
+                                    <td><?php echo $i++; ?></td>
+                                    <td><?php echo $row['name']; ?></td>
+                                    <td><?php echo $row['email']; ?></td>
+                                    <td><?php echo $row['department']; ?></td>
+                                    <td><?php echo $row['phoneNumber']; ?></td>
+                                    <td><?php echo $row['12th']; ?></td>
+                                    <td><?php echo $row['graduation']; ?></td>
+                                    <td><a href="update.php?id=<?php echo  $row['id']; ?>" class="view" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a></td>
+                                    <td><button><a href="./delete.php?id=<?php echo $row['id']; ?>" class="delete" data-toggle="tootip"><i class="material-icons">&#xE872;</i></a></button></td>
+                                </tr>
+                            <?php }
+                        } else { ?>
+                        <tr>
+                            <td class="text-center" colspan="8">No Data to Show.</td>
+                        </tr>
                         <?php } ?>
                     </table>
                 </div>
