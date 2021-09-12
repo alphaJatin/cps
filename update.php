@@ -4,14 +4,13 @@ session_start();
 if (isset($_GET['id']) && $_SESSION['type'] == 'admin' && $_SERVER['REQUEST_METHOD'] === 'GET') {
   require_once './config/db_con.php';
   $id = $_SESSION['uid'] = $_GET['id'];
-  $sql = "SELECT * FROM student WHERE id = '$id';";
-  $result = ($con->query($sql))->fetch_assoc();
+  $q = "SELECT * FROM student WHERE id = '$id';";
+  $result = ($con->query($q))->fetch_assoc();
   $con->close();
 } else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   require_once './config/db_con.php';
   $id = $_SESSION['uid'];
   unset($_SESSION['uid']);
-  echo $id;
   $name = $_POST['name'];
   $phoneNumber = $_POST['number'];
   $department = $_POST['department'];
@@ -88,7 +87,6 @@ if (isset($_GET['id']) && $_SESSION['type'] == 'admin' && $_SERVER['REQUEST_METH
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-1 mb-3 bg-body rounded">
     <div class="container-fluid">
       <a class="navbar-brand px-4" href="./index.php"><img src="./logo.png" alt="MAIMT" width="50px"></a>

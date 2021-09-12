@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION) && $_SESSION['logIn'] === true && $_SESSION['type'] === 'admin') {
+if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'admin') {
     require_once '../../config/db_con.php';
     $id = $_SESSION['id'];
     $name = $_SESSION['name'];
