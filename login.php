@@ -152,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Sample image">
               </div>
               <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form action="<?php $_SERVER['PHP_SELF'] ?>" name="login" method="post" onsubmit="return validateLogin();">
+                <form action="<?php $_SERVER['PHP_SELF'] ?>" name="login" method="POST" onsubmit="return validateLogin();">
                   <div class="text-center text-danger">
                     <h1>Log in</h1>
                   </div>
