@@ -23,7 +23,8 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'admin') {
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <style>
-        th,td {
+        th,
+        td {
             text-align: center !important;
         }
     </style>
@@ -53,24 +54,16 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'admin') {
                             </div>
                             Applied Students
                         </a>
-<<<<<<< HEAD
-                        <a class="nav-link" href="./view.php">
-=======
                         <a class="nav-link" href="../../view.php">
->>>>>>> 8845741268e4cd646638e670777fb768b6516281
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
                             </div>
                             View Students
                         </a>
-
-
-
                         <a class="nav-link" href="./addCompany.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-building"></i>
                             </div>
                             Add Company
                         </a>
-                        
                     </div>
                 </div>
             </nav>
@@ -83,42 +76,38 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'admin') {
                         <!-- <div class="card-header"> <i class="fas fa-table me-1"></i> Students </div> -->
                         <div class="card-body">
                             <table id="datatablesSimple">
-                                < <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Department</th>
-                                <th>Mobile Number</th>
-                                <th>12th</th>
-                                <th>Graduation</th>
-                                <th colspan="2" class="text-center">Action</th>
-                            </tr>
-                        </thead>
-
-                        <?php if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) { ?>
-                                <tr>
-                                    <td><?php echo $i++; ?></td>
-                                    <td><?php echo $row['name']; ?></td>
-                                    <td><?php echo $row['email']; ?></td>
-                                    <td><?php echo $row['department']; ?></td>
-                                    <td><?php echo $row['phoneNumber']; ?></td>
-                                    <td><?php echo $row['12th']; ?></td>
-                                    <td><?php echo $row['graduation']; ?></td>
-                                    <td><a href="update.php?id=<?php echo  $row['id']; ?>" class="view" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a></td>
-                                    <td><button><a href="./delete.php?id=<?php echo $row['id']; ?>" class="delete" data-toggle="tootip"><i class="material-icons">&#xE872;</i></a></button></td>
-                                </tr>
-                            <?php }
-                        } else { ?>
-                        <tr>
-                            <td class="text-center" colspan="8">No Data to Show.</td>
-                        </tr>
-                        <?php } ?>
-                    </table>
-         
-                            
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Department</th>
+                                        <th>12th Marks</th>
+                                        <th>Graduation Marks</th>
+                                        <th>Email</th>
+                                        <th>Company</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php while ($row = $result->fetch_assoc()) { ?>
+                                        <tr>
+                                            <td><?php echo $row['sname']; ?></td>
+                                            <td><?php echo $row['department']; ?> </td>
+                                            <td><?php echo $row['12th']; ?></td>
+                                            <td><?php echo $row['graduation']; ?></td>
+                                            <td><?php echo $row['email']; ?></td>
+                                            <td><?php echo $row['cname']; ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Department</th>
+                                        <th>12th Marks</th>
+                                        <th>Graduation</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
                 </div>
