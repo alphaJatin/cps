@@ -73,37 +73,36 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4 row">
+                <div class="container px-5">
                     <h2 class="my-4">Latest Recruiters</h2>
-                    <?php while ($row = $result->fetch_assoc()) { ?>
-
-                        <div class="col-md-6 col-lg-4 card mb-4 ">
-                            <div class="card-header fs-5 fw-bold text-center">
-                                <?php echo $row['name']; ?>
-                            </div>
-                            <div class="card-body">
-                                <div class="row mb-3">
-                                    <div class="col-md-6 fs-6">
-                                        <span class="text-primary" style="font-weight: 500;">Location:</span> <?php echo $row['location']; ?>
+                    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3"">
+                        <?php while ($row = $result->fetch_assoc()) { ?>
+                            <div class="col card mb-4">
+                                <div class="card-header fs-5 fw-bold text-center">
+                                    <?php echo $row['name']; ?>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row mb-3">
+                                        <div class="col-md-6 fs-6">
+                                            <span class="text-primary" style="font-weight: 500;">Location:</span> <?php echo $row['location']; ?>
+                                        </div>
+                                        <div class="col-md-6 fs-6">
+                                            <span class="text-primary" style="font-weight: 500;">Package:</span> <?php echo $row['package']; ?>
+                                        </div>
+                                        <div class="col-md-12 fs-6">
+                                            <span class="text-primary" style="font-weight: 500;">Coming Date:</span> <?php echo $row['date'] ?>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 fs-6">
-                                        <span class="text-primary" style="font-weight: 500;">Package:</span> <?php echo $row['package']; ?>
-                                    </div>
-                                    <div class="col-md-12 fs-6">
-                                        <span class="text-primary" style="font-weight: 500;">Coming Date:</span> <?php echo $row['date'] ?>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-dark">Apply Now</a>
                                     </div>
                                 </div>
-                                <div class="text-center">
-                                    <a href="#" class="btn btn-dark">Apply Now</a>
-                                </div>
                             </div>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
                 </div>
+            </main>
         </div>
-        </main>
-
-    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
