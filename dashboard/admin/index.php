@@ -53,7 +53,11 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'admin') {
                             </div>
                             Applied Students
                         </a>
+<<<<<<< HEAD
                         <a class="nav-link" href="./view.php">
+=======
+                        <a class="nav-link" href="../../view.php">
+>>>>>>> 8845741268e4cd646638e670777fb768b6516281
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
                             </div>
                             View Students
