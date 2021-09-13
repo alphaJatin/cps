@@ -61,18 +61,15 @@ $result = $con->query($q);
             </nav>  
         </div>
     </div>
-        <div class="container-xl">
-        <div class="table-responsive">
-            <div class="table-wrapper">
-                <div class="table-title">
-                    <div class="row">
-                        <div class="col-sm-5">
-                            <h2>Student <b>Infomation</b></h2>
-                        </div>
-                        <div class="col-sm-7" align="right">
-                        </div>
-                    </div>
-                    <table class="table table-striped table-hover">
+    <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="my-4">Student</h1>
+                    <div class="card mb-4">
+                        <!-- <div class="card-header"> <i class="fas fa-table me-1"></i> Students </div> -->
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                < <table class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -106,7 +103,7 @@ $result = $con->query($q);
                         </tr>
                         <?php } ?>
                     </table>
-                </div>
+                 </div>
             </div>
         </div>
     </div>
