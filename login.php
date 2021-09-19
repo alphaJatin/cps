@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $_SESSION['name'] = $row['name'];
       $con->close();
       if ($_SESSION['type'] === 'student')
-        exit(header("Location: ./index.php"));
+        exit(header("Location: ./dashboard/student/"));
       else
         exit(header("Location: ./dashboard/admin/"));
     } else $error = 'Wrong password.';

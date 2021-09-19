@@ -53,12 +53,12 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">MENU</div>
-                        <a class="nav-link bg-light text-dark" href="index.html">
+                        <a class="nav-link bg-light text-dark" href="./index.php">
                             <div class="sb-nav-link-icon text-dark"><i class="fas fa-check"></i>
                             </div>
                             Applied Company
                         </a>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="./view-company.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
                             </div>
                             View Company

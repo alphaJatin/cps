@@ -20,7 +20,7 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
     <title>Dashboard - SB Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <style>
         th,
         td {
@@ -52,7 +52,7 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">MENU</div>
-                        <a class="nav-link " href="index.html">
+                        <a class="nav-link " href="./index.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-check"></i>
                             </div>
                             Applied Company
@@ -73,28 +73,30 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
         </div>
         <div id="layoutSidenav_content">
             <main>
+                <h2 class="my-4">Latest Recruiters</h2>
                 <div class="container px-5">
-                    <h2 class="my-4">Latest Recruiters</h2>
-                    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3"">
+                    <div class="row g-2">
                         <?php while ($row = $result->fetch_assoc()) { ?>
-                            <div class="col card mb-4">
-                                <div class="card-header fs-5 fw-bold text-center">
-                                    <?php echo $row['name']; ?>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row mb-3">
-                                        <div class="col-md-6 fs-6">
-                                            <span class="text-primary" style="font-weight: 500;">Location:</span> <?php echo $row['location']; ?>
-                                        </div>
-                                        <div class="col-md-6 fs-6">
-                                            <span class="text-primary" style="font-weight: 500;">Package:</span> <?php echo $row['package']; ?>
-                                        </div>
-                                        <div class="col-md-12 fs-6">
-                                            <span class="text-primary" style="font-weight: 500;">Coming Date:</span> <?php echo $row['date'] ?>
-                                        </div>
+                            <div class="col-4">
+                                <div class="card mb-4">
+                                    <div class="card-header fs-5 fw-bold text-center">
+                                        <?php echo $row['name']; ?>
                                     </div>
-                                    <div class="text-center">
-                                        <a href="#" class="btn btn-dark">Apply Now</a>
+                                    <div class="card-body">
+                                        <div class="row mb-3">
+                                            <div class="col-md-6 fs-6">
+                                                <span class="text-primary" style="font-weight: 500;">Location:</span> <?php echo $row['location']; ?>
+                                            </div>
+                                            <div class="col-md-6 fs-6">
+                                                <span class="text-primary" style="font-weight: 500;">Package:</span> <?php echo $row['package']; ?>
+                                            </div>
+                                            <div class="col-md-12 fs-6">
+                                                <span class="text-primary" style="font-weight: 500;">Coming Date:</span> <?php echo $row['date'] ?>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <a href="#" class="btn btn-dark">Apply Now</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -104,8 +106,9 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
             </main>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

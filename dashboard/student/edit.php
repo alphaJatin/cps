@@ -69,7 +69,7 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
                             </div>
                             Applied Company
                         </a>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="./view-company.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
                             </div>
                             View Company
