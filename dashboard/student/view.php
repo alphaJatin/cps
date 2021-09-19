@@ -5,6 +5,13 @@ if (isset($_SESSION) && $_SESSION['login'] === true && $_SESSION['type'] === 'st
     $id = $_SESSION['id'];
     $q = "SELECT * FROM company order by date desc";
     $result = $con->query($q);
+
+    $q = "SELECT company_id as cid FROM applied where student_id=$id";
+    $result2 = $con->query($q);
+    $applied = array();
+    while ($row = $result2->fetch_assoc()) {
+        array_push($applied, $row['cid']);
+    }
     $con->close();
 } else exit(header("Location: ../../login.php")); ?>
 
@@ -19,7 +26,7 @@ if (isset($_SESSION) && $_SESSION['login'] === true && $_SESSION['type'] === 'st
     <meta name="author" content="" />
     <title>Dashboard - SB Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <link href="./css/styles.css" rel="stylesheet" />
     <style>
 
@@ -71,11 +78,26 @@ if (isset($_SESSION) && $_SESSION['login'] === true && $_SESSION['type'] === 'st
                     <h1>Latest Recruiters</h1>
                     <div class="row my-3">
                         <?php while ($row = $result->fetch_assoc()) { ?>
+
                             <div class="card col-12 my-2">
                                 <div class="card-header d-flex justify-content-between align-items-center">
                                     <div class="fs-6 fw-bold"><?php echo $row['name']; ?></div>
-                                    <a href="#" class="btn btn-dark btn-sm">Apply Now</a>
+
+                                    <?php $flag = false;
+                                    foreach ($applied as $aid) {
+                                        if ($row['id'] == $aid) {
+                                            $flag = true;
+                                            break;
+                                        }
+                                    } ?>
+                                    <?php if ($flag) { ?>
+                                        <a href="#" class="btn btn-dark btn-sm disabled">Applied <i class="fas fa-check"></i></a>
+                                    <?php } else { ?>
+                                        <a href="./apply.php?cid=<?php echo $row['id']; ?>" class="btn btn-dark btn-sm">Apply Now</a>
+                                    <?php } ?>
+
                                 </div>
+
                                 <div class="card-body row justify-content-between">
                                     <div class="col-md-6 col-lg-4 fs-6 text-center">
                                         <span class="text-primary" style="font-weight: 500;">Location:</span> <?php echo $row['location']; ?>
@@ -84,7 +106,7 @@ if (isset($_SESSION) && $_SESSION['login'] === true && $_SESSION['type'] === 'st
                                         <span class="text-primary" style="font-weight: 500;">Package:</span> <?php echo $row['package']; ?>
                                     </div>
                                     <div class="col-md-6 col-lg-4 fs-6 text-center">
-                                        <span class="text-primary" style="font-weight: 500;">Coming Date:</span> <?php echo $row['date'] ?>
+                                        <span class="text-primary" style="font-weight: 500;">On:</span> <?php echo $row['date'] ?>
                                     </div>
                                 </div>
                             </div>
