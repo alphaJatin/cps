@@ -1,6 +1,7 @@
 <?php
 session_start();
-if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
+$alert = false;
+if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'] === 'student') {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         require_once '../../config/db_con.php';
         $id = $_SESSION['id'];
@@ -12,15 +13,20 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
         $id = $_SESSION['id'];
         $name = $_POST['name'];
         $phoneNumber = $_POST['number'];
-        $email = $_POST['email'];
         $department = $_POST['department'];
         $marks12 = $_POST['marks12'];
         $graduation = $_POST['graduation'];
         $password = $_POST['password'];
         $sql = "UPDATE student SET name='$name', department='$department', phoneNumber='$phoneNumber',
-    12th=$marks12, graduation=$graduation, email='$email', password='$password' WHERE id=$id";
+    12th=$marks12, graduation=$graduation, password='$password' WHERE id=$id";
         if (!$con->query($sql)) exit(print "Error:" . $con->error);
-        else exit(header('location:./index.php'));
+        else {
+            $id = $_SESSION['id'];
+            $q = "SELECT * FROM student WHERE id = '$id';";
+            $result = ($con->query($q))->fetch_assoc();
+            $con->close();
+            $alert = true;
+        }
     }
 } else exit(header("Location: ../../login.php")); ?>
 
@@ -42,12 +48,17 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
         td {
             text-align: center !important;
         }
+
+        .alert {
+            padding: 0.5rem 1rem;
+        }
+        .btn-close{
+            height: 0;
+        }
     </style>
 </head>
 
 <body class="sb-nav-fixed">
-
-    <!-- ----------------------------- Admin-Panel ----------------------------- -->
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between px-4">
         <a class="navbar-brand ps-3" href="../../index.php">M A I M T</a>
@@ -69,7 +80,7 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
                             </div>
                             Applied Company
                         </a>
-                        <a class="nav-link" href="./view-company.php">
+                        <a class="nav-link" href="./view.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
                             </div>
                             View Company
@@ -84,6 +95,12 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
             </nav>
         </div>
         <div id="layoutSidenav_content">
+            <div class="position-relative" id="alertBox" style="display: none;">
+                <div class="alert alert-primary alert-dismissible fade show position-absolute w-100" role="alert" style="z-index:5">
+                    <strong>Profile Updated</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
             <main class="bg-light mb-4">
                 <div id="layoutAuthentication">
                     <div id="layoutAuthentication_content">
@@ -114,7 +131,7 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
                                                     <div class="row mb-3">
                                                         <div class="col">
                                                             <div class="form-floating">
-                                                                <input name="email" class="form-control" id="inputEmail" type="email" placeholder="name@example.com" value="<?php echo $result['email']; ?>" />
+                                                                <input name="email" class="form-control" id="inputEmail" type="email" placeholder="name@example.com" value="<?php echo $result['email']; ?>" disabled />
                                                                 <label for="inputEmail">Email address</label>
                                                             </div>
                                                         </div>
@@ -173,7 +190,6 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
                     </div>
                 </div>
             </main>
-
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -183,6 +199,15 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
     <script src="assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
+    <?php if ($alert === true) { ?>
+        <script>
+            let alertBox = document.getElementById("alertBox").style;
+            alertBox.display = "block";
+            setTimeout(() => {
+                alertBox.display = "none";
+            }, 3000);
+        </script>
+    <?php } ?>
 </body>
 
 </html>

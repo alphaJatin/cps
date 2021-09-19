@@ -1,13 +1,13 @@
 <?php
 session_start();
-if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'admin') {
+if ($_SESSION['login'] === true && $_SESSION['type'] === 'admin') {
     require_once '../../config/db_con.php';
     $id = $_SESSION['id'];
     $name = $_SESSION['name'];
     $query = "SELECT s.name sname, s.department, s.12th, s.graduation, s.email, c.name cname FROM student s JOIN applied a ON s.id = a.student_id JOIN company c ON a.company_id = c.id;";
     $result = $con->query($query);
     $con->close();
-} else exit(header("Location: ../login.php")) ?>
+} else exit(header("Location: ../../login.php")); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,12 +49,12 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'admin') {
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">MENU</div>
-                        <a class="nav-link bg-light text-dark" href="index.html">
+                        <a class="nav-link bg-light text-dark" href="./index.php">
                             <div class="sb-nav-link-icon text-dark"><i class="fas fa-check"></i>
                             </div>
                             Applied Students
                         </a>
-                        <a class="nav-link" href="../../view.php">
+                        <a class="nav-link" href="./view.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
                             </div>
                             View Students
@@ -78,50 +78,34 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'admin') {
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Name</th>
                                         <th>Department</th>
-                                        <th>12th Marks</th>
-                                        <th>Graduation Marks</th>
                                         <th>Email</th>
                                         <th>Company</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php while ($row = $result->fetch_assoc()) { ?>
+                                    <?php
+                                    $i = 1;
+                                    while ($row = $result->fetch_assoc()) { ?>
                                         <tr>
+                                            <td><?php echo $i++; ?></td>
                                             <td><?php echo $row['sname']; ?></td>
                                             <td><?php echo $row['department']; ?> </td>
-                                            <td><?php echo $row['12th']; ?></td>
-                                            <td><?php echo $row['graduation']; ?></td>
                                             <td><?php echo $row['email']; ?></td>
                                             <td><?php echo $row['cname']; ?></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Department</th>
-                                        <th>12th Marks</th>
-                                        <th>Graduation</th>
-                                        <th>Email</th>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>
                 </div>
             </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
+            <footer class="py-2 bg-light mt-auto">
+                <div class="container-fluid px-4 text-center small">
+                    <div class="text-muted">Copyright &copy; MAIMT 2021</div>
                 </div>
             </footer>
         </div>

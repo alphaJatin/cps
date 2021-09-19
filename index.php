@@ -32,7 +32,7 @@ $result = $con->query($query);
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-evenly">
                     <li class="nav-item px-3 py-2">
-                        <a class="nav-link fw-bold active" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link fw-bold active" aria-current="page" href="./index.php">Home</a>
                     </li>
                     <li class="nav-item px-3 py-2">
                         <a class="nav-link fw-bold" href="about.php">About Us</a>
@@ -40,7 +40,7 @@ $result = $con->query($query);
                     <li class="nav-item px-3 py-2">
                         <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
                     </li>
-                    <?php if (isset($_SESSION['logIn']) && $_SESSION['logIn'] === true) { ?>
+                    <?php if (isset($_SESSION['login']) && $_SESSION['login'] === true) { ?>
                         <li class="nav-item px-3 py-2">
                             <a class="nav-link fw-bold" href="./dashboard/<?php echo ($_SESSION['type'] === "admin") ? "admin/" : "student/"; ?>">Dashboard</a>
                         </li>

@@ -1,10 +1,10 @@
 <?php
 session_start();
-if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
+if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'] === 'student') {
     require_once '../../config/db_con.php';
     $id = $_SESSION['id'];
     $name = $_SESSION['name'];
-    $q = "SELECT c.name as cname, a.date adate FROM student s JOIN applied a ON s.id=a.student_id AND s.id=$id JOIN company c on a.company_id=c.id";
+    $q = "SELECT c.id as cid, c.name as cname, a.date adate FROM student s JOIN applied a ON s.id=a.student_id AND s.id=$id JOIN company c on a.company_id=c.id";
     $result = $con->query($q);
     $con->close();
 } else exit(header("Location: ../../login.php")); ?>
@@ -58,7 +58,7 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
                             </div>
                             Applied Company
                         </a>
-                        <a class="nav-link" href="./view-company.php">
+                        <a class="nav-link" href="./view.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
                             </div>
                             View Company
@@ -95,19 +95,10 @@ if ($_SESSION['logIn'] === true && $_SESSION['type'] === 'student') {
                                             <td><?php echo $i++ ?></td>
                                             <td><?php echo $row['cname']; ?> </td>
                                             <td><?php echo $row['adate']; ?></td>
-                                            <td id="remove"><a class="text-decoration-none text-danger fw-bold" href="#">Remove</a></td>
+                                            <td><a href="./delete.php?cid=<?php echo $row['cid'] ?>"><i class="fas fa-trash text-dark"></i></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Department</th>
-                                        <th>12th Marks</th>
-                                        <th>Graduation</th>
-                                        <th>Email</th>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>

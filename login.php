@@ -1,7 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['logIn']) && $_SESSION['logIn'] === true) {
-  exit(header("Location:./dashboard/"));
+if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+  $push = ($_SESSION['type'] == 'admin')  ? 'admin' : 'student';
+  exit(header("Location:./dashboard/" . $push . "/index.php"));
 }
 $error = $email  = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -21,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $row = $result->fetch_assoc();
     if ($row['password'] === $password) {
       $_SESSION['id'] = $row['id'];
-      $_SESSION['logIn'] = true;
+      $_SESSION['login'] = true;
       $_SESSION['type'] = $row['type'];
       $_SESSION['name'] = $row['name'];
       $con->close();

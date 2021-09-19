@@ -1,14 +1,17 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once "../../config/db_con.php";
-    $name = $_POST['name'];
-    $package = $_POST['package'];
-    $location = $_POST['location'];
-    $date = $_POST['date'];
-    $query = "INSERT INTO company (name, package, location, date) VALUES('$name','$package','$location','$date');";
-    if (!$con->query($query))  echo "Error: " . $conn->error;
-    $con->close();
-}
+session_start();
+if ($_SESSION['login'] === true && $_SESSION['type'] === 'admin') {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        require_once "../../config/db_con.php";
+        $name = $_POST['name'];
+        $package = $_POST['package'];
+        $location = $_POST['location'];
+        $date = $_POST['date'];
+        $query = "INSERT INTO company (name, package, location, date) VALUES('$name','$package','$location','$date');";
+        if (!$con->query($query))  echo "Error: " . $conn->error;
+        $con->close();
+    }
+} else exit(header("Location: ../../login.php")); ?>
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                             Applied Students
                         </a>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="./view.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
                             </div>
                             View Students
