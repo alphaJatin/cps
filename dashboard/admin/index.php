@@ -59,7 +59,7 @@ if ($_SESSION['login'] === true && $_SESSION['type'] === 'admin') {
                             </div>
                             View Students
                         </a>
-                        <a class="nav-link" href="./addCompany.php">
+                        <a class="nav-link" href="./add-comp.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-building"></i>
                             </div>
                             Add Company

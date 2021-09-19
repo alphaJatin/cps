@@ -1,24 +1,25 @@
 <?php
 session_start();
 $alert = false;
-if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'] === 'student') {
+if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'] === 'admin' && isset($_GET['sid'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         require_once '../../config/db_con.php';
-        $id = $_SESSION['id'];
+        $_SESSION['sid'] = $id = $_GET['sid'];
         $q = "SELECT * FROM student WHERE id = '$id';";
         $result = ($con->query($q))->fetch_assoc();
         $con->close();
     } else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         require_once '../../config/db_con.php';
-        $id = $_SESSION['id'];
+        $id = $_SESSION['sid'];
         $name = $_POST['name'];
         $phoneNumber = $_POST['number'];
         $department = $_POST['department'];
         $marks12 = $_POST['marks12'];
         $graduation = $_POST['graduation'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
         $sql = "UPDATE student SET name='$name', department='$department', phoneNumber='$phoneNumber',
-    12th=$marks12, graduation=$graduation, password='$password' WHERE id=$id";
+        12th=$marks12, graduation=$graduation, email='$email', password='$password' WHERE id=$id";
         if (!$con->query($sql)) exit(print "Error:" . $con->error);
         else {
             $q = "SELECT * FROM student WHERE id = '$id';";
@@ -65,10 +66,6 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
         select:focus {
             box-shadow: none !important;
         }
-
-        .card-body {
-            padding: 1rem 2rem !important;
-        }
     </style>
 </head>
 
@@ -92,17 +89,22 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                         <a class="nav-link" href="./index.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-check"></i>
                             </div>
-                            Applied Company
+                            Applied Students
                         </a>
                         <a class="nav-link" href="./view.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i>
                             </div>
-                            View Company
+                            View Students
                         </a>
-                        <a class="nav-link bg-light text-dark" href="./edit.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-building text-dark"></i>
+                        <a class="nav-link" href="./add-comp.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-building"></i>
                             </div>
-                            Edit Profile
+                            Add Company
+                        </a>
+                        <a class="nav-link bg-light text-dark" href="./add-comp.php">
+                            <div class="sb-nav-link-icon text-dark"><i class="fas fa-edit"></i>
+                            </div>
+                            Edit Student Data
                         </a>
                     </div>
                 </div>
@@ -111,7 +113,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
         <div id="layoutSidenav_content">
             <div class="position-relative" id="alertBox" style="display: none;">
                 <div class="alert alert-primary alert-dismissible fade show position-absolute w-100" role="alert" style="z-index:5">
-                    <strong>Profile Updated</strong>
+                    <span class="text-dark fw-bold">Student profile updated !!</span>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
@@ -127,7 +129,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                                                 <h3 class="text-center font-weight-light my-1">Edit Profile</h3>
                                             </div>
 
-                                            <div class="card-body px-3">
+                                            <div class="card-body">
                                                 <form action="<?php $_SERVER['PHP_SELF'] ?>" name="update" method="POST" onsubmit="return validateStudentUpdate();" novalidate>
                                                     <div class="row mb-3">
                                                         <div class="col-md-6">
@@ -205,7 +207,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                                                     </div>
                                                 </form>
                                             </div>
-
+                                            
                                         </div>
                                     </div>
                                 </div>

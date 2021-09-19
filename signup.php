@@ -1,21 +1,27 @@
   <?php
+  session_start();
   $name = $department = $phoneNumber = $marks12 = $graduation = $email = "";
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once './config/db_con.php';
-    $name = $_POST['name'];
-    $phoneNumber = $_POST['number'];
-    $department = $_POST['department'];
-    $marks12 = $_POST['marks12'];
-    $graduation = $_POST['graduation'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+  if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+    exit(header("Location ./dashboard/" . $_SESSION['type'] . "/index.php"));
+  } else {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      require_once './config/db_con.php';
+      $name = $_POST['name'];
+      $phoneNumber = $_POST['number'];
+      $department = $_POST['department'];
+      $marks12 = $_POST['marks12'];
+      $graduation = $_POST['graduation'];
+      $email = $_POST['email'];
+      $password = $_POST['password'];
 
-    $query = "INSERT INTO student (name, email, department, phoneNumber, password, 12th, graduation) 
+      $query = "INSERT INTO student (name, email, department, phoneNumber, password, 12th, graduation) 
           VALUES('$name','$email','$department','$phoneNumber','$password', $marks12, $graduation)";
 
-    if (!$con->query($query)) echo "Error:" . $con->error;
-    else exit(header("Location: ./login.php"));
-    $con->close();
+      if (!$con->query($query)) echo "Error:" . $con->error;
+      else exit(header("Location: ./login.php"));
+
+      $con->close();
+    }
   }
   ?>
 
@@ -144,13 +150,13 @@
 
             <div class="form-outline mb-3">
               <label class="form-label" for="form3Example3">Contact Number </label>
-              <input type="text" pattern="\d{10}" id="form3Example3" name="number" class="form-control form-control" placeholder="Enter your Contact Number" value="<?php echo $phoneNumber; ?>" />
+              <input type="text" pattern="\d{10}" id="form3Example3" name="number" maxlength="10" minlength="10" class="form-control form-control" placeholder="Enter your Contact Number" value="<?php echo $phoneNumber; ?>" />
               <small class="error-msg">Please, enter a valid phone number.</small>
             </div>
 
             <div class="form-outline mb-3">
               <label class="form-label" for="form3Example3">12th Marks</label>
-              <input type="text" value="<?php echo $marks12; ?>" name="marks12" id="form3Example3" pattern="\d{3}" class="form-control form-control" placeholder=" Enter 12th  Mark" />
+              <input type="text" value="<?php echo $marks12; ?>" name="marks12" id="form3Example3" pattern="\d{3}" class="form-control form-control" minlength="3" maxlength="3" placeholder="Enter 12th Mark" />
               <small class="error-msg">Please enter your 12th marks.</small>
             </div>
             <div class="form-outline mb-3">
@@ -167,7 +173,7 @@
 
             <div class="form-outline mb-3">
               <label class="form-label" for="form3Example4">Password</label>
-              <input type="password" id="form3Example4" name="password" class="form-control form-control" placeholder="Enter password" pattern=".{5,}" />
+              <input type="password" id="form3Example4" name="password" class="form-control form-control" placeholder="Enter password" pattern=".{5,}" minlength="5"/>
               <small class="error-msg">Password should be minimum 5 character long.</small>
             </div>
 

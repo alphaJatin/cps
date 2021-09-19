@@ -99,13 +99,13 @@ if (isset($_SESSION) && $_SESSION['login'] === true && $_SESSION['type'] === 'st
                                 </div>
 
                                 <div class="card-body row justify-content-between">
-                                    <div class="col-md-6 col-lg-4 fs-6 text-center">
+                                    <div class="col-sm-6 col-lg-4 fs-6 text-center">
                                         <span class="text-primary" style="font-weight: 500;">Location:</span> <?php echo $row['location']; ?>
                                     </div>
-                                    <div class="col-md-6 col-lg-4 fs-6 text-center">
+                                    <div class="col-sm-6 col-lg-4 fs-6 text-center">
                                         <span class="text-primary" style="font-weight: 500;">Package:</span> <?php echo $row['package']; ?>
                                     </div>
-                                    <div class="col-md-6 col-lg-4 fs-6 text-center">
+                                    <div class="col-sm-6 col-lg-4 fs-6 text-center">
                                         <span class="text-primary" style="font-weight: 500;">On:</span> <?php echo $row['date'] ?>
                                     </div>
                                 </div>

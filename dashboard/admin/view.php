@@ -56,7 +56,7 @@ if ($_SESSION['login'] === true && $_SESSION['type'] === 'admin') {
                             </div>
                             View Students
                         </a>
-                        <a class="nav-link" href="./addCompany.php">
+                        <a class="nav-link" href="./add-comp.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-building"></i>
                             </div>
                             Add Company
@@ -68,7 +68,7 @@ if ($_SESSION['login'] === true && $_SESSION['type'] === 'admin') {
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="my-4">Applied Students</h1>
+                    <h1 class="my-4">All Students</h1>
                     <div class="card mb-4">
                         <!-- <div class="card-header"> <i class="fas fa-table me-1"></i> Students </div> -->
                         <div class="card-body">
@@ -96,8 +96,8 @@ if ($_SESSION['login'] === true && $_SESSION['type'] === 'admin') {
                                             <td><?php echo $row['graduation']; ?></td>
                                             <td><?php echo $row['email']; ?></td>
                                             <td><?php echo $row['phoneNumber']; ?></td>
-                                            <td><a href="update.php?id=<?php echo  $row['id']; ?>"><i class="fas fa-edit text-dark"></i></a></td>
-                                            <td><a href="./delete.php?id=<?php echo $row['id']; ?>"><i class="fas fa-trash text-dark"></i></a></td>
+                                            <td><a href="./update.php?sid=<?php echo  $row['id']; ?>"><i class="fas fa-edit text-dark"></i></a></td>
+                                            <td><a href="./delete.php?sid=<?php echo $row['id']; ?>"><i class="fas fa-trash text-dark"></i></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
