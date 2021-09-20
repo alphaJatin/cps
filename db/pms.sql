@@ -3,13 +3,19 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2021 at 06:03 AM
+-- Generation Time: Sep 20, 2021 at 06:06 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `pms`
@@ -44,8 +50,19 @@ INSERT INTO `admin` (`id`, `name`, `email`, `password`, `type`) VALUES
 
 CREATE TABLE `applied` (
   `student_id` mediumint(8) UNSIGNED NOT NULL,
-  `company_id` mediumint(8) UNSIGNED NOT NULL
+  `company_id` mediumint(8) UNSIGNED NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `applied`
+--
+
+INSERT INTO `applied` (`student_id`, `company_id`, `date`) VALUES
+(19, 15, '2021-09-19'),
+(19, 16, '2021-09-19'),
+(19, 19, '2021-09-19'),
+(21, 27, '2021-09-20');
 
 -- --------------------------------------------------------
 
@@ -66,12 +83,12 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`id`, `name`, `package`, `location`, `date`) VALUES
-(1, 'Ashriya', '32.5', 'Mohali', '2021-09-25'),
-(2, 'JigSaw', '23.', 'Mohail', '2021-09-03'),
-(3, 'Rambo', '2.5', 'EID', '2021-10-03'),
-(4, 'Moto Solution', '2.5', 'Hyper', '2021-09-07'),
-(5, 'Moto Solution', '2.5', 'Hyper', '2021-09-07'),
-(6, 'Moto Solution', '2.5', 'Hyper', '2021-09-07');
+(10, 'Ashriya Limited', '32.5', 'Mohali', '2021-09-25'),
+(15, 'Moto Solution', '2.5', 'Hyper', '2021-09-07'),
+(16, 'Rainbow Infotech', '2.5', 'Delhi', '2021-09-08'),
+(19, 'MI Limited', '2.6', 'Yamunangar', '0000-00-00'),
+(27, 'Apple', '90.5', 'US', '2021-10-01'),
+(30, 'MoshiTob', '23.5', 'Noida', '2021-09-30');
 
 -- --------------------------------------------------------
 
@@ -103,6 +120,14 @@ CREATE TABLE `student` (
   `password` varchar(30) NOT NULL,
   `type` varchar(30) NOT NULL DEFAULT 'student'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`id`, `name`, `department`, `phoneNumber`, `12th`, `graduation`, `email`, `password`, `type`) VALUES
+(19, 'Rohan', 'BCA', '8604445555', 124, 4432, 'rohanDas888@gmail.com', 'mobile99', 'student'),
+(21, 'Jatin', 'MCA', '7867867860', 222, 1245, 'jatin.official@gmail.com', 'mobile99', 'student');
 
 --
 -- Indexes for dumped tables
@@ -150,13 +175,13 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `query`
@@ -168,7 +193,7 @@ ALTER TABLE `query`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
@@ -182,3 +207,6 @@ ALTER TABLE `applied`
   ADD CONSTRAINT `applied_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

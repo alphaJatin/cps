@@ -87,7 +87,7 @@ if (isset($_POST['submit'])) {
                     </div>
 
                     <div class="col-md-5 px-5 px-sm-0">
-                         <h3 class="py-3 text-dark">Any query ?</h3>
+                         <h3 class="py-3 text-dark text-center">Any query ?</h3>
                          <div class="wow fadeInUp " data-wow-delay="0.4s">
                               <form id="contact-form" class="row justify-content-center" action="" method="POST">
                                    <div class="col-sm-12">
@@ -109,7 +109,7 @@ if (isset($_POST['submit'])) {
 
                     <div class="col-md-5 py-sm-5 py-md-0">
                          <!-- CONTACT INFO -->
-                         <h3 class="py-3 text-dark">Contact Info:</h3>
+                         <h3 class="py-3 text-dark text-center">Contact Info:</h3>
                          <div class="detail">
                               <h5 class="fw-bold">Mailling Address</h5>
                               <p class="text-muted"> Maharaja Agrasen Institute of Management and Technology,
