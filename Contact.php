@@ -134,7 +134,7 @@ if (isset($_POST['submit'])) {
           </div>
      </section>
 
-     <?php include './Components/Footer/Footer.php' ?>
+     <?php include './footer.php' ?>
      <script src="https://kit.fontawesome.com/1422ef591f.js" crossorigin="anonymous"></script>
 </body>
 

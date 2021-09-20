@@ -119,7 +119,7 @@ $result = $con->query($query);
     </div>
     </div>
 
-    <?php include_once 'Components/Footer/Footer.php' ?>
+    <?php include_once 'footer.php' ?>
 
     <script src="./js/jquery-2.2.4.min.js"></script>
 

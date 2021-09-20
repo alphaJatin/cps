@@ -107,7 +107,7 @@
               <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
             </li>
             <li class="nav-item px-3 py-2">
-              <a class="nav-link fw-bold active" href="login.php">Login</a>
+              <a class="nav-link fw-bold active" href="login.php">Sign Up</a>
             </li>
           </ul>
         </div>
@@ -179,13 +179,14 @@
 
             <div class="text-center text-center mt-4 py-2 ">
               <button type="submit" name="signup" class="btn btn-danger" style="padding-left: 2.5rem; padding-right: 2.5rem;">Signup</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Already a user ? <a href="./login.php" class="link-danger"> Login Now</a></p>
             </div>
           </form>
         </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <?php include_once "./Components/Footer/Footer.php" ?>
+    <?php include_once "./footer.php" ?>
     <script>
       function validateSignUp() {
         const ERROR = document.getElementsByClassName("error-msg");

@@ -188,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         Remember me
                       </label>
                     </div>
-                    <a href="recover.php" class="text-body">Forgot password?</a>
+                    <a href="#" class="text-body">Forgot password?</a>
                   </div>
 
                   <small class="error-msg w-100 d-block text-center pt-2"><?php echo $error ?></small>
@@ -204,7 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </div>
   </div>
-  <?php include_once "./Components/Footer/Footer.php" ?>
+  <?php include_once "./footer.php" ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
