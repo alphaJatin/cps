@@ -32,7 +32,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
     <!-- ----------------------------- Admin-Panel ----------------------------- -->
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between px-4">
-        <a class="navbar-brand ps-3" href="../../index.php">M A I M T</a>
+        <a style="font-weight: 600;" class="navbar-brand ps-3" href="../../index.php"><i class="fas fa-home"></i> &nbsp; M A I M T</a>
         <div class="w-100 text-end">
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 " id="sidebarToggle" href="#!">
                 <i class="fas fa-bars"></i>
@@ -56,7 +56,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                             </div>
                             View Students
                         </a>
-                        <a class="nav-link" href="./add-comp.php">
+                        <a class="nav-link" href="./view-comp.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-calendar"></i>
                             </div>
                             View Companies
@@ -120,23 +120,10 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                     </div>
                 </div>
             </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
 </body>

@@ -1,9 +1,11 @@
 <?php
 session_start();
+
 if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
   $push = ($_SESSION['type'] == 'admin')  ? 'admin' : 'student';
   exit(header("Location:./dashboard/" . $push . "/index.php"));
 }
+
 $error = $email  = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   require_once './config/db_con.php';
@@ -26,7 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $_SESSION['type'] = $row['type'];
       $_SESSION['name'] = $row['name'];
       $con->close();
-      if ($_SESSION['type'] === 'student')
+
+      if (isset($_SESSION['redirect_cid'])) {
+        $cid = $_SESSION['redirect_cid'];
+        exit(header("Location: ./dashboard/student/apply.php?cid=$cid"));
+      } else if ($_SESSION['type'] == 'student')
         exit(header("Location: ./dashboard/student/"));
       else
         exit(header("Location: ./dashboard/admin/"));

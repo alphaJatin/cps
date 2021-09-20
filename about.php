@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,21 +87,31 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-evenly">
                     <li class="nav-item px-3 py-2">
-                        <a class="nav-link fw-bold " aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link fw-bold" aria-current="page" href="./index.php">Home</a>
                     </li>
                     <li class="nav-item px-3 py-2">
                         <a class="nav-link fw-bold active" href="about.php">About Us</a>
                     </li>
                     <li class="nav-item px-3 py-2">
-                        <a class="nav-link fw-bold " href="Contact.php">Contact Us</a>
+                        <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
                     </li>
-                    <li class="nav-item px-3 py-2">
-                        <a class="nav-link fw-bold" href="login.php">Login</a>
-                    </li>
+                    <?php if (isset($_SESSION['login']) && $_SESSION['login'] === true) { ?>
+                        <li class="nav-item px-3 py-2">
+                            <a class="nav-link fw-bold" href="./dashboard/<?php echo ($_SESSION['type'] === "admin") ? "admin/" : "student/"; ?>">Dashboard</a>
+                        </li>
+                        <li class="nav-item px-3 py-2">
+                            <a class="nav-link fw-bold" href="./logout.php">Logout</a>
+                        </li>
+                    <?php } else {  ?>
+                        <li class="nav-item px-3 py-2">
+                            <a class="nav-link fw-bold" href="./login.php">Login</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
     </nav>
+
     <div class="container-fluid">
         <section>
             <div class="row my-4">

@@ -31,7 +31,7 @@ if ($_SESSION['login'] === true && $_SESSION['type'] === 'admin') {
     <!-- ----------------------------- Admin-Panel ----------------------------- -->
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between px-4">
-        <a class="navbar-brand ps-3" href="../../index.php">M A I M T</a>
+        <a style="font-weight: 600;" class="navbar-brand ps-3" href="../../index.php"><i class="fas fa-home"></i> &nbsp; M A I M T</a>
         <div class="w-100 text-end">
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 " id="sidebarToggle" href="#!">
                 <i class="fas fa-bars"></i>
@@ -73,11 +73,11 @@ if ($_SESSION['login'] === true && $_SESSION['type'] === 'admin') {
         <div id="layoutSidenav_content">
             <main>
                 <div class="container px-5">
-                    <h1 class="py-4">View All Companies</h1>
+                    <h1 class="py-4">View all companies</h1>
                     <div class="list-group">
                         <?php while ($row = $result->fetch_array()) { ?>
                             <div class="list-group-item list-group-item-action d-flex justify-content-between align-content-center">
-                                <div class="fw-bold"><?php echo $row['name'] ?></div>
+                                <div class="text-dark"><?php echo $row['name'] ?></div>
                                 <div class="action d-flex">
                                     <div class="px-4"><a href="./edit-comp.php?cid=<?php echo $row['id'] ?>" class="text-dark"><i class="fas fa-pencil-alt"></i></a></div>
                                     <div><a href="./delete.php?cid=<?php echo $row['id']; ?>"><i class="fas fa-trash text-dark"></i></a></div>
@@ -87,19 +87,6 @@ if ($_SESSION['login'] === true && $_SESSION['type'] === 'admin') {
                     </div>
                 </div>
             </main>
-
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                        <div>
-                            <a>Privacy Policy</a>
-                            &middot;
-                            <a>Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

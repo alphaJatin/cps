@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "./config/db_con.php";
-$query = "SELECT name from company";
+$query = "SELECT id, name from company";
 $result = $con->query($query);
 ?>
 <!doctype html>
@@ -26,7 +26,7 @@ $result = $con->query($query);
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-1 rounded">
         <div class="container-fluid">
             <a class="navbar-brand px-4" href="./index.php"><img src="./logo.png" alt="MAIMT" width="50px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +55,6 @@ $result = $con->query($query);
                             <a class="nav-link fw-bold" href="./login.php">Login</a>
                         </li>
                     <?php } ?>
-
                 </ul>
             </div>
         </div>
@@ -70,15 +69,14 @@ $result = $con->query($query);
         </div>
     </div>
 
-    <div class="container-fluid" id="goto">
+    <div class="container-fluid py-3" id="goto">
         <h1 class="my-4 text-danger text-style">Latest Recruitments</h1>
-
         <ul class="list-group mx-3 mb-4" id="listGroup">
             <?php if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) { ?>
                     <li class="list-group-item">
                         <span><?php echo $row['name'] ?> <span class="fw-bold text-danger">is hiring !!</span></span>
-                        <button class="btn btn-danger btn-style">Apply</button>
+                        <a href="./intermediate.php?cid=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">Apply Now</a>
                     </li>
                 <?php }
             } else { ?>

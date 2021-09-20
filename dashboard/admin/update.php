@@ -72,7 +72,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
 <body class="sb-nav-fixed">
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between px-4">
-        <a class="navbar-brand ps-3" href="../../index.php">M A I M T</a>
+        <a style="font-weight: 600;" class="navbar-brand ps-3" href="../../index.php"><i class="fas fa-home"></i> &nbsp; M A I M T</a>
         <div class="w-100 text-end">
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 " id="sidebarToggle" href="#!">
                 <i class="fas fa-bars"></i>
@@ -207,7 +207,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                                                     </div>
                                                 </form>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>

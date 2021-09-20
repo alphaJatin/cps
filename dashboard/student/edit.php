@@ -75,7 +75,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
 <body class="sb-nav-fixed">
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between px-4">
-        <a class="navbar-brand ps-3" href="../../index.php">M A I M T</a>
+        <a style="font-weight: 600;" class="navbar-brand ps-3" href="../../index.php"><i class="fas fa-home"></i> &nbsp; M A I M T</a>
         <div class="w-100 text-end">
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 " id="sidebarToggle" href="#!">
                 <i class="fas fa-bars"></i>
@@ -149,7 +149,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                                                     <div class="row mb-3">
                                                         <div class="col">
                                                             <div class="form-floating">
-                                                                <input name="email" class="form-control" id="inputEmail" type="text" placeholder="name@example.com" value="<?php echo $result['email']; ?>" pattern="[0-9A-Za-z\._-]{3,}@[A-Za-z]{2,}\.[A-Za-z]{2,}" disabled/>
+                                                                <input name="email" class="form-control" id="inputEmail" type="text" placeholder="name@example.com" value="<?php echo $result['email']; ?>" pattern="[0-9A-Za-z\._-]{3,}@[A-Za-z]{2,}\.[A-Za-z]{2,}" disabled />
                                                                 <label for="inputEmail">Email address</label>
                                                             </div>
                                                             <small class="error-msg">Enter a valid email.</small>

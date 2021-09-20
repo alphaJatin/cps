@@ -81,7 +81,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
     <!-- ----------------------------- Admin-Panel ----------------------------- -->
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between px-4">
-        <a class="navbar-brand ps-3" href="../../index.php">M A I M T</a>
+        <a style="font-weight: 600;" class="navbar-brand ps-3" href="../../index.php"><i class="fas fa-home"></i> &nbsp; M A I M T</a>
         <div class="w-100 text-end">
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 " id="sidebarToggle" href="#!">
                 <i class="fas fa-bars"></i>
@@ -163,28 +163,13 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                                         <input type="date" name="date" class="form-control" value="<?php echo $result['date'] ?>">
                                         <small class="error-msg">Please enter your campus date.</small>
                                     </div>
-                                    <div class="form-check my-3"> <input class="form-check-input" type="checkbox" value="checked" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> I agree to the terms and conditions of <a href="#" class="login">Privacy & Policy</a> </label> </div>
                                 </div>
-                                <div class="text-center"> <input type="submit" class="btn btn-dark px-4" value="UPDATE" /> </div>
+                            </div>
+                            <div class="text-center"> <input type="submit" class="btn btn-dark px-4" value="UPDATE" /> </div>
                         </form>
                     </div>
                 </div>
-
             </main>
-
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-
         </div>
     </div>
     <script src="js/scripts.js"></script>

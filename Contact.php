@@ -1,4 +1,5 @@
 <?php
+session_start();
 include './config/db_con.php';
 if (isset($_POST['submit'])) {
      $name = $_POST['name'];
@@ -70,12 +71,10 @@ if (isset($_POST['submit'])) {
                                    <a class="nav-link fw-bold" href="./login.php">Login</a>
                               </li>
                          <?php } ?>
-
                     </ul>
                </div>
           </div>
      </nav>
-
      <section id="contact" class="parallax-section py-3">
           <div class="container-fluid">
                <div class="row justify-content-evenly">
