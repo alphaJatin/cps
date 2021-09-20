@@ -22,9 +22,9 @@ if (isset($_POST['submit'])) {
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
+     <title>Contact</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-     <link rel="stylesheet" type="text/css" href="contactstyle.css">
+     <link rel="stylesheet" type="text/css" href="./css/contactstyle.css">
      <style>
           .nav-item a:hover {
                color: #dc3545 !important;
@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 <body>
      <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-1 mb-3 rounded">
           <div class="container-fluid">
-               <a class="navbar-brand px-4" href="./index.php"><img src="./logo.png" alt="MAIMT" width="50px"></a>
+               <a class="navbar-brand px-4" href="./index.php"><img src="./img/logo.png" alt="MAIMT" width="50px"></a>
                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                </button>
@@ -54,10 +54,10 @@ if (isset($_POST['submit'])) {
                               <a class="nav-link fw-bold" aria-current="page" href="./index.php">Home</a>
                          </li>
                          <li class="nav-item px-3 py-2">
-                              <a class="nav-link fw-bold" href="about.php">About Us</a>
+                              <a class="nav-link fw-bold" href="./about.php">About Us</a>
                          </li>
                          <li class="nav-item px-3 py-2">
-                              <a class="nav-link fw-bold active" href="Contact.php">Contact Us</a>
+                              <a class="nav-link fw-bold active" href="./contact.php">Contact Us</a>
                          </li>
                          <?php if (isset($_SESSION['login']) && $_SESSION['login'] === true) { ?>
                               <li class="nav-item px-3 py-2">
@@ -121,17 +121,16 @@ if (isset($_POST['submit'])) {
                                    <br>01732-235255
                               </p>
                               <h5 class="fw-bold">Email Directory</h5>
-                              <p class="text-muted">director@maimt.com(Director)
-                                   placement@maimt.com (Placement Cell)
-                                   hodmgt@maimt.com (Department of Management)
-                                   hodca@maimt.com (Department of Computer Application)
-                                   library@maimt.com (Librarian)</p>
+                              <ul class="text-muted">
+                                   <li>Director: director@maimt.com</li>
+                                   <li>Placement Cell: placement@maimt.com</li>
+                                   <li>Department of Management: hodmgt@maimt.com</li>
+                                   <li>Department of Computer Application: hodca@maimt.com </li>
+                                   <li>Librarian: library@maimt.com</li>
+                              </ul>
                          </div>
                     </div>
-
                </div>
-
-
           </div>
      </section>
 

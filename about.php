@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - M A I M T</title>
-    <!-- <link rel="stylesheet" type="text/css" href="about.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/1422ef591f.js" crossorigin="anonymous"></script>
     <style>
@@ -19,7 +18,7 @@
         }
 
         .hero-image {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./about-banner.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./img/about-bg.jpg");
             background-color: black;
             height: 300px;
             background-position: center;
@@ -116,11 +115,11 @@
         <section>
             <div class="row my-4">
                 <div class="col-sm-12 col-md-5 mx-auto">
-                    <h2 class="h1 text-center py-2">Placement and Training Department</h2>
+                    <h2 class="h1 text-center py-2">About <span style="letter-spacing: 2px;">MAIMT</span></h2>
                     <p class="text-muted text-start">MAIMT was founded in 1997, the golden jubilee year of Indian independence, as a result of vision of Maharaja Agrasen Sabha. MAIMT is affiliated to Kurukshetra University and approved by AICTE. 21st century is an era of Professional Education. It is a route to enlightenment and a tool for improvement. One of the early proponents of a formal degree in the region, MAIMT over the years, has produced many successful business leaden, great thinkers and wealth creators. Activities are organized throughout the year in an effort towards preparing the prospective students for the campus selection programme. The institute has provided complete infrastructure for effective functioning of the Industry Interaction Cell. The year long activities of cell include talks by industry experts, industrial visits, seminars & conferences on various topics in technology and management.</p>
                 </div>
                 <div class="mx-auto col-sm-12 col-md-5 d-flex justify-content-center align-items-cente">
-                    <img src="./maimt.jpg" class="card-img-top" alt="Maimt Image">
+                    <img src="./img/maimt.jpg" class="card-img-top" alt="Maimt Image">
                 </div>
             </div>
         </section>
