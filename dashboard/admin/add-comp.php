@@ -114,7 +114,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
         <div id="layoutSidenav_content">
             <div class="position-relative" id="alertBox" style="display: none;">
                 <div class="alert alert-primary alert-dismissible fade show position-absolute w-100" role="alert" style="z-index:5">
-                    <strong>Company Added</strong>
+                    <strong>Company added !!</strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
@@ -148,7 +148,6 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                                         <input type="date" name="date" class="form-control">
                                         <small class="error-msg">Please enter your campus date.</small>
                                     </div>
-                                    <div class="form-check my-3"> <input class="form-check-input" type="checkbox" value="checked" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> I agree to the terms and conditions of <a href="#" class="login">Privacy & Policy</a> </label> </div>
                                 </div>
                                 <div class="text-center"> <input type="submit" class="btn btn-dark px-4" value="ADD" /> </div>
                         </form>
