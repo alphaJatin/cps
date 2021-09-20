@@ -1,18 +1,28 @@
 <?php
 session_start();
 $alert = false;
-if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'] === 'admin') {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'] === 'admin' && isset($_GET['cid'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        require_once '../../config/db_con.php';
+        $_SESSION['sid'] = $id = $_GET['cid'];
+        $q = "SELECT * FROM company WHERE id = '$id';";
+        $result = ($con->query($q))->fetch_assoc();
+    } else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         require_once "../../config/db_con.php";
+        $id = $_SESSION['sid'];
         $name = $_POST['name'];
         $package = $_POST['package'];
         $location = $_POST['location'];
         $date = $_POST['date'];
-        $query = "INSERT INTO company (name, package, location, date) VALUES('$name','$package','$location','$date');";
+        $query = "UPDATE company SET name='$name', package='$package', location='$location', date='$date' where id=$id;";
         if (!$con->query($query))  echo "Error: " . $conn->error;
-        $alert = true;
-        $con->close();
+        else {
+            $q = "SELECT * FROM company WHERE id = '$id';";
+            $result = ($con->query($q))->fetch_assoc();
+            $alert = true;
+        }
     }
+    $con->close();
 } else exit(header("Location: ../../login.php")); ?>
 
 <!DOCTYPE html>
@@ -101,10 +111,15 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                             </div>
                             View Companies
                         </a>
-                        <a class="nav-link bg-light text-dark" href="./add-comp.php">
-                            <div class="sb-nav-link-icon text-dark"><i class="fas fa-building"></i>
+                        <a class="nav-link" href="./add-comp.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-building"></i>
                             </div>
                             Add Company
+                        </a>
+                        <a class="nav-link bg-light text-dark" href="./add-comp.php">
+                            <div class="sb-nav-link-icon text-dark"><i class="fas fa-edit"></i>
+                            </div>
+                            Edit Company
                         </a>
                     </div>
                 </div>
@@ -114,7 +129,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
         <div id="layoutSidenav_content">
             <div class="position-relative" id="alertBox" style="display: none;">
                 <div class="alert alert-primary alert-dismissible fade show position-absolute w-100" role="alert" style="z-index:5">
-                    <strong>Company Added</strong>
+                    <strong>Company details updated.</strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
@@ -125,32 +140,32 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                         <h3 class="text-center font-weight-light my-2">Add Company</h3>
                     </div>
                     <div class="card-body">
-                        <form class="col-md-12" method="POST" action="<?php $_SERVER['PHP_SELF'] ?>" name="addCompany" onsubmit="return validateAddCompany();">
+                        <form class="col-md-12" method="POST" action="<?php $_SERVER['PHP_SELF'] ?>" name="updateCompany" onsubmit="return validateUpdateCompany();" novalidate>
                             <div class="row">
                                 <div class="form">
                                     <div class="inputbox my-3">
                                         <span>Company Name</span>
-                                        <input type="text" placeholder="Name" name="name" class="form-control" pattern="[a-zA-Z\.-_@\s]{3,}">
+                                        <input type="text" placeholder="Name" name="name" class="form-control" pattern="[a-zA-Z\.-_@\s]{3,}" value="<?php echo $result['name'] ?>">
                                         <small class="error-msg">Please, enter your company name.</small>
                                     </div>
                                     <div class="inputbox input-group my-3">
                                         <span class="d-block w-100">Anual Package </span>
-                                        <input type="text" placeholder="2.4" name="package" class="form-control d-flex" pattern="[\d\.]{1,}">
+                                        <input type="text" placeholder="2.4" name="package" class="form-control d-flex" pattern="[\d\.]{1,}" value="<?php echo $result['package'] ?>">
                                         <span class="input-group-text" id="basic-addon2">LPA</span>
                                         <small class="error-msg">Please enter your annual package.</small>
                                     </div>
 
                                     <div class="inputbox my-3"> <span>Location</span>
-                                        <input type="text" placeholder="Chandigrah" class="form-control" name="location" pattern="[a-zA-Z0-9\.-_()\s]{2,}">
+                                        <input type="text" placeholder="Chandigrah" class="form-control" name="location" pattern="[a-zA-Z0-9\.-_()\s]{2,}" value="<?php echo $result['location'] ?>">
                                         <small class="error-msg">Please enter your location.</small>
                                     </div>
                                     <div class="inputbox my-3"> <span>Date of campus</span>
-                                        <input type="date" name="date" class="form-control">
+                                        <input type="date" name="date" class="form-control" value="<?php echo $result['date'] ?>">
                                         <small class="error-msg">Please enter your campus date.</small>
                                     </div>
                                     <div class="form-check my-3"> <input class="form-check-input" type="checkbox" value="checked" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> I agree to the terms and conditions of <a href="#" class="login">Privacy & Policy</a> </label> </div>
                                 </div>
-                                <div class="text-center"> <input type="submit" class="btn btn-dark px-4" value="ADD" /> </div>
+                                <div class="text-center"> <input type="submit" class="btn btn-dark px-4" value="UPDATE" /> </div>
                         </form>
                     </div>
                 </div>
@@ -172,15 +187,14 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
 
         </div>
     </div>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script> -->
     <script src="js/scripts.js"></script>
     <script>
-        const validateAddCompany = () => {
+        const validateUpdateCompany = () => {
             const ERROR = document.getElementsByClassName("error-msg");
-            const name = addCompany.name;
-            const package = addCompany.package;
-            const location = addCompany.location;
-            const date = addCompany.date;
+            const name = updateCompany.name;
+            const package = updateCompany.package;
+            const location = updateCompany.location;
+            const date = updateCompany.date;
 
             if (name.value === "" || name.validity.patternMismatch) {
                 ERROR[0].style.display = "inline-block";
