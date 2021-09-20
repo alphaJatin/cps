@@ -90,22 +90,25 @@ $result = $con->query($query);
             <div class="h1 text-center py-3 text-danger">Our Partners</div>
             <div class="MS-content">
                 <div class="item">
-                    <img src="./img/slider/debut_infotech.png" alt="c1">
+                    <img src="./img/slider/tcs.png" alt="Tcs" height="200px"> 
                 </div>
                 <div class="item">
-                    <img src="./img/slider/ashriya_infotech.png" alt="">
+                    <img src="./img/slider/catalyst.png" alt="Catalyst" height="200px">
                 </div>
                 <div class="item">
-                    <img src="./img/slider/tcs.png" alt="">
+                    <img src="./img/slider/debut_infotech.png" alt="Debut Infotech" height="200px">
                 </div>
                 <div class="item">
-                    <img src="./img/slider/ashriya_infotech.png" alt="">
+                    <img src="./img/slider/deloitte.png" alt="Deloitte" height="200px">
                 </div>
                 <div class="item">
-                    <img src="./img/slider/tcs.png" alt="">
+                    <img src="./img/slider/genpact.png" alt="Genpact" height="200px">
                 </div>
                 <div class="item">
-                    <img src="./img/slider/debut_infotech.png" alt="">
+                    <img src="./img/slider/infosys.png" alt="Infosys" height="200px">
+                </div>
+                <div class="item">
+                    <img src="./img/slider/toxsl.png" alt="Toxsl" height="200px">
                 </div>
             </div>
             <div class="MS-controls">
