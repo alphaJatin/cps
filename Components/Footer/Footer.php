@@ -36,7 +36,7 @@
 
                 <div class="col-sm-12 col-md-3 mx-auto text-start pt-3 pt-sm-0">
                     <h6 class="text-uppercase fw-bold text-center text-dark">
-                        <i class="fas fa-gem me-3"></i>Contact
+                        <i class="fas fa-gem me-3"></i>C o n t a ct
                     </h6>
                     <ul class="py- m-0">
                         <li> Near agrasen chowk, old saharanpur road, Jagadhri - 135003. </li>

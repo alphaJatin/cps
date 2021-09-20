@@ -149,7 +149,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true && $_SESSION['type'
                                                     <div class="row mb-3">
                                                         <div class="col">
                                                             <div class="form-floating">
-                                                                <input name="email" class="form-control" id="inputEmail" type="text" placeholder="name@example.com" value="<?php echo $result['email']; ?>" pattern="[0-9A-Za-z\._-]{3,}@[A-Za-z]{2,}\.[A-Za-z]{2,}" />
+                                                                <input name="email" class="form-control" id="inputEmail" type="text" placeholder="name@example.com" value="<?php echo $result['email']; ?>" pattern="[0-9A-Za-z\._-]{3,}@[A-Za-z]{2,}\.[A-Za-z]{2,}" disabled/>
                                                                 <label for="inputEmail">Email address</label>
                                                             </div>
                                                             <small class="error-msg">Enter a valid email.</small>
