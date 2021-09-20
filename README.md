@@ -8,6 +8,6 @@
 ## Database Schema
 
 <p align="center">
-  <img src="https://res.cloudinary.com/dyolrju8j/image/upload/v1632164656/image_ghyumt.png" />
+  <img src="https://res.cloudinary.com/dyolrju8j/image/upload/v1632166331/bg-trans_umnv8t.png" />
 </p>
 
