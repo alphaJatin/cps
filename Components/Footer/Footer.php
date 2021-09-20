@@ -22,39 +22,36 @@
         <!-- Right -->
     </section>
     <section>
-        <div class="container-fluid text-center text-md-start my-4">
+        <div class="container-fluid text-center text-md-start py-3">
             <!-- Grid row -->
-            <div class="row text-center">
+            <div class="row text-center justify-content-center align-items-center py-3">
                 <!-- Grid column -->
-                <div class="col-sm-12 col-md-3 my-1 mx-auto mb-4">
+                <div class="col-sm-12 col-md-3 mx-auto">
                     <!-- Content -->
-                    <h6 class="text-uppercase fw-bold mb-4 text-dark">
+                    <h6 class="m-0 text-uppercase fw-bold text-dark">
                         <i class="fas fa-gem me-3"></i>M A I M T
                     </h6>
-                    <p>
-                        MAIMT Celebrating 24 Years Of Excellence in Management & IT Education.
-                    </p>
+                    <p class="py-3 m-0">MAIMT Celebrating 24 Years Of Excellence in Management & IT Education.</p>
                 </div>
 
-                <div class="col-sm-12 col-md-4 my-1 mx-auto mb-md-0 mb-4 text-start">
-                    <h6 class="text-uppercase fw-bold mb-4 text-center text-dark">
+                <div class="col-sm-12 col-md-3 mx-auto text-start pt-3 pt-sm-0">
+                    <h6 class="text-uppercase fw-bold text-center text-dark">
                         <i class="fas fa-gem me-3"></i>Contact
                     </h6>
-                    <p><i class="fas fa-home me-3 text-dark"></i>
-                        Near Agrasen Chowk, Old Saharanpur Road,
-                        Jagadhri-135003.</p>
-                    <p class="">
-                        <i class="fas fa-envelope me-3 text-dark"></i>
-                        email@gmail.com
-                    </p>
-                    <p><i class="fas fa-phone me-3 text-dark"></i> +91-82229-48277</p>
+                    <ul class="py- m-0">
+                        <li> Near agrasen chowk, old saharanpur road, Jagadhri - 135003. </li>
+                        <li>director@maimt.com</li>
+                        <li>+91-82229-48277</;>
+                    </ul>
                 </div>
             </div>
+
         </div>
     </section>
-    <div class="text-center p-2 text-dark" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class="text-center py-2 text-dark" style="background-color: rgba(0, 0, 0, 0.05);">
         &copy; 2021 Copyright:
-        <a class="fw-bold text-dark" href="https://maimt.com/">MAIMT.com</a>
+        <a class="text-dark" href="https://maimt.com/" style="font-weight:600;">MAIMT</a>
+
     </div>
     <!-- Copyright -->
 </footer>

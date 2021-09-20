@@ -18,7 +18,7 @@
         }
 
         .hero-image {
-            /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./bgImg.jpg"); */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./about-banner.jpg");
             background-color: black;
             height: 300px;
             background-position: center;
@@ -35,6 +35,12 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
+        }
+
+        @media only screen and (max-width:576px) {
+            .hero-text {
+                max-width: 80%;
+            }
         }
 
         .hero-text button {
@@ -71,7 +77,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-1 mb-3 rounded">
         <div class="container-fluid">
             <a class="navbar-brand px-4" href="./index.php"><img src="./logo.png" alt="MAIMT" width="50px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -110,33 +116,12 @@
         <section class="my-4">
             <div class="hero-image">
                 <div class="hero-text">
-                    <h1 style="font-size:50px">What we offer</h1>
-                    <p class="mx-auto">The institute Offers Bachelors degree courses in 02 disciplines viz. computer applications(BCA) and business administration(BBA) and 02 in post graduate courses viz. master of computer application(MCA) and master of business administration(MBA).</p>
+                    <h1 style="font-size:50px; letter-spacing:8px;">VISION</h1>
+                    <p class="mx-auto">We aspire to serve the changing mind set of young leaders to sparkle their innovation in corporate hence to be global leaders.</p>
                 </div>
             </div>
         </section>
-
     </div>
-    <!-- <div class="container">
-        <h1>meet our team</h1>
-        <div id="made" class="row">
-            <div class="col-xl"> <img id="photos" src="person1.jpg"><span>
-                    <h2>hsaosaid</h2>
-                </span></div>
-            <div class="col-xl"> <img id="photos" src="person2.jpg"><span>
-                    <h2>hsaosaid</h2>
-                </span></div>
-            <div class="col-xl"> <img id="photos" src="person3.jpg"><span>
-                    <h2>hsaosaid</h2>
-                </span></div>
-            <div class="col-xl"> <img id="photos" src="person4.jpg"><span>
-                    <h2>hsaosaid</h2>
-                </span></div>
-            <div class="col-xl"> <img id="photos" src="person5.jpg"><span>
-                    <h2>hsaosaid</h2>
-                </span></div>
-        </div>
-    </div> -->
     <?php include_once "./Components/Footer/Footer.php"; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
