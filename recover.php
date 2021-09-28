@@ -1,3 +1,7 @@
+<?php
+    $conn=mysqli_connect("localhost","root","","pms");
+   
+?>
 <!doctype html>
 <html lang="en">
 
@@ -33,7 +37,40 @@
     }
   </style>
 </head>
-
+<?php   
+  if(isset($_POST["btns"]))
+  {
+    $name=$_POST["Email"];
+    $pass=$_POST["pass"];
+    $que1="select * from student";
+    $result1=mysqli_query($conn,$que1);
+    while($col=mysqli_fetch_array($result1))
+    {
+        if($col[6]==$name)
+        {
+          $que="update student set password='$pass' where email='$name'"; 
+          $result=mysqli_query($conn,$que);
+          ?>
+               <script>
+      alert("Updated Successfully ...");
+    </script>
+          <?php
+        }
+        else
+        {
+            ?>
+                <script>
+                    alert("Invalid Email");
+                </script>
+            <?php
+        }
+    }
+   ?>
+   
+    <?php
+    
+  }
+?>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-1 mb-3 bg-body rounded">
     <div class="container-fluid">
@@ -50,11 +87,12 @@
             <a class="nav-link fw-bold " href="about.php">About Us</a>
           </li>
           <li class="nav-item px-3 py-2">
-            <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
+            <a class="nav-link fw-bold" href="login.php">Login</a>
           </li>
           <li class="nav-item px-3 py-2">
-            <a class="nav-link fw-bold active" href="./recover.php">Recover</a>
+            <a class="nav-link fw-bold" href="Contact.php">Contact Us</a>
           </li>
+         
         </ul>
       </div>
     </div>
@@ -70,26 +108,26 @@
               </div>
 
               <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form>
+                <form action="" method="post">
                   <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                     <p class="lead fw-normal mb-0 me-3">
-                    <h1>Password Recovery </h1>
+                    <h1 style="color:red">Password Recovery </h1>
                     </p>
                   </div>
                   <!-- Email input -->
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example3">Username</label>
-                    <input type="Email" id="form3Example3" aria-describedby="emailHelp" class="form-control form-control-lg" placeholder="Enter a Your Email" />
+                    <label class="form-label" for="form3Example3">Email</label>
+                    <input type="Email" name="Email" id="form3Example3" aria-describedby="emailHelp" class="form-control form-control-lg" placeholder="Enter a Your Email" />
                   </div>
 
                   <!-- Password input -->
                   <div class="form-outline mb-3">
                     <label class="form-label" for="form3Example4">Enter the New Password</label>
-                    <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" />
+                    <input type="password" name="pass" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" />
                   </div>
 
                   <div class="text-center text-lg-start mt-4 pt-2 text-center">
-                    <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">submit</button>
+                    <button name="btns" type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">submit</button>
                   </div>
 
                 </form>
@@ -99,8 +137,9 @@
         </section>
       </div>
     </div>
+    <?php include "./footer.php" ?>
   </div>
-  <?php include "./footer.php" ?>
+  
 
 
 

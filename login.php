@@ -188,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         Remember me
                       </label>
                     </div>
-                    <a href="#" class="text-body">Forgot password?</a>
+                    <a href="recover.php" class="text-body">Forgot password?</a>
                   </div>
 
                   <small class="error-msg w-100 d-block text-center pt-2"><?php echo $error ?></small>
